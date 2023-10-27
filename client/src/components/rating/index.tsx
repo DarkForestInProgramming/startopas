@@ -4,8 +4,8 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Rating: FC<ProductRating> = (props) => {
   return (
-    <div className="flex">
-      <span>
+    <div className="rating-container">
+      <span className="rating-star">
         {props.value >= 1 ? (
           <FaStar />
         ) : props.value >= 0.5 ? (
@@ -14,7 +14,7 @@ const Rating: FC<ProductRating> = (props) => {
           <FaRegStar />
         )}
       </span>
-      <span>
+      <span className="rating-star">
         {props.value >= 2 ? (
           <FaStar />
         ) : props.value >= 1.5 ? (
@@ -23,7 +23,7 @@ const Rating: FC<ProductRating> = (props) => {
           <FaRegStar />
         )}
       </span>
-      <span>
+      <span className="rating-star">
         {props.value >= 3 ? (
           <FaStar />
         ) : props.value >= 2.5 ? (
@@ -32,7 +32,7 @@ const Rating: FC<ProductRating> = (props) => {
           <FaRegStar />
         )}
       </span>
-      <span>
+      <span className="rating-star">
         {props.value >= 4 ? (
           <FaStar />
         ) : props.value >= 3.5 ? (
@@ -41,7 +41,7 @@ const Rating: FC<ProductRating> = (props) => {
           <FaRegStar />
         )}
       </span>
-      <span>
+      <span className="rating-star">
         {props.value >= 5 ? (
           <FaStar />
         ) : props.value >= 4.5 ? (
@@ -50,9 +50,7 @@ const Rating: FC<ProductRating> = (props) => {
           <FaRegStar />
         )}
       </span>
-      <span className="text-sm pl-2 font-semibold">
-        {props.text && props.text}
-      </span>
+      <span className="rating-text ">{props.text && props.text}</span>
     </div>
   );
 };

@@ -6,3 +6,19 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Rating */
+.rating-container {
+  display: flex;
+}
+
+.rating-star {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-left: 0.5rem;
+}
