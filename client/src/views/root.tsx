@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { RootviewProps } from "../interfaces/RootviewProps";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { Root } from "../interfaces/global_interfaces";
 
-const Rootview: FC<RootviewProps> = (props) => {
+const Rootview: FC<Root> = (props) => {
   return (
     <div className="flex flex-col h-screen">
       <Header />

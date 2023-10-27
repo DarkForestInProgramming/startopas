@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface RootviewProps {
+export interface Root {
   header: string;
   children: ReactNode;
 }

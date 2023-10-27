@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { RatingProps } from "../../interfaces/RatingProps";
+import { ProductRating } from "../../interfaces/product_interfaces";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
-const Rating: FC<RatingProps> = (props) => {
+const Rating: FC<ProductRating> = (props) => {
   return (
     <div className="flex">
       <span>
