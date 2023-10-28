@@ -3,6 +3,7 @@ import Rating from "../../components/rating";
 import Breadcrumb from "../../components/breadcrumb";
 import { useParams } from "react-router-dom";
 import { useGetProductDetailsQuery } from "../../services/slices/productsApiSlice";
+import Loader from "../../components/loader";
 
 const ProductView = () => {
   const { id: productId } = useParams();
@@ -13,7 +14,7 @@ const ProductView = () => {
     <AppLayout header="Prekė">
       {isLoading ? (
         <>
-          <h2>Kraunama...</h2>
+          <Loader />
         </>
       ) : (
         <>

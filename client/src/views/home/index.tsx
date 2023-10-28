@@ -2,6 +2,7 @@ import Card from "../../components/card";
 import AppLayout from "../../layouts/main";
 import { Product } from "../../interfaces/productInterfaces";
 import { useGetProductsQuery } from "../../services/slices/productsApiSlice";
+import Loader from "../../components/loader";
 
 const HomeView = () => {
   const { data: products, isLoading } = useGetProductsQuery({});
@@ -10,7 +11,7 @@ const HomeView = () => {
     <AppLayout header="Pagrindinis">
       {isLoading ? (
         <>
-          <h2>Kraunama...</h2>
+          <Loader />
         </>
       ) : (
         <>
