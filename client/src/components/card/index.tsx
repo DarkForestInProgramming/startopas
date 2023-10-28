@@ -15,9 +15,10 @@ const Card: React.FC<ProductCard> = ({
     <div className="bg-white rounded-lg shadow-lg p-4">
       <Link to={`/product/${_id}`}>
         <img
+          className="w-full h-96 object-contain rounded-md hover:scale-105 transition duration-500"
           src={image}
           alt={name}
-          className="w-full h-96 object-contain rounded-md hover:scale-105 transition duration-500"
+          loading="lazy"
         />
       </Link>
       <Link to={`/product/${_id}`}>
