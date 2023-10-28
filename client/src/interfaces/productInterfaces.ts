@@ -9,6 +9,7 @@ export interface Product {
   countInStock: number;
   rating: number;
   numReviews: number;
+  qty: number;
 }
 
 export interface ProductCard {
