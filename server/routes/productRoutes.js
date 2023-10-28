@@ -4,6 +4,8 @@ import Product from "../models/productModel.js";
 
 const router = express.Router();
 
+// Get products
+
 router.get(
   "/",
   asyncHandler(async (req, res) => {
@@ -12,6 +14,8 @@ router.get(
   })
 );
 
+// Get product by ID
+
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -19,7 +23,8 @@ router.get(
     if (product) {
       return res.json(product);
     }
-    res.status(404).json({ message: "Prekė nerasta." });
+    res.status(404);
+    throw new Error("Resource not found");
   })
 );
 
