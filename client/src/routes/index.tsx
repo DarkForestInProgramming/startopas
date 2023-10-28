@@ -3,7 +3,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import App from "../App";
+import App from "../app/App";
 import HomeView from "../views/home";
 import NotFoundView from "../views/404";
 import ProductView from "../views/product";
