@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import Rootview from "./root";
+import AppLayout from "../../layouts/main";
 
 const NotFoundView = () => {
   return (
-    <Rootview header="404 - Puslapis nerastas">
+    <AppLayout header="404 - Puslapis nerastas">
       <div className="flex h-full items-center justify-center">
         <div className="bg-white p-20 rounded-lg shadow-lg text-center">
           <h2 className="text-2xl font-bold text-red-500">
@@ -17,7 +17,7 @@ const NotFoundView = () => {
           </p>
         </div>
       </div>
-    </Rootview>
+    </AppLayout>
   );
 };
 

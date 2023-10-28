@@ -1,13 +1,13 @@
-import Card from "../components/card";
-import Rootview from "./root";
-import { Product } from "../interfaces/product_interfaces";
-import { useGetProductsQuery } from "../app/slices/productsApiSlice";
+import Card from "../../components/card";
+import AppLayout from "../../layouts/main";
+import { Product } from "../../interfaces/productInterfaces";
+import { useGetProductsQuery } from "../../services/slices/productsApiSlice";
 
 const HomeView = () => {
   const { data: products, isLoading } = useGetProductsQuery({});
 
   return (
-    <Rootview header="Pagrindinis">
+    <AppLayout header="Pagrindinis">
       {isLoading ? (
         <>
           <h2>Kraunama...</h2>
@@ -34,7 +34,7 @@ const HomeView = () => {
           </main>
         </>
       )}
-    </Rootview>
+    </AppLayout>
   );
 };
 

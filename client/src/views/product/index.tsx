@@ -1,8 +1,8 @@
-import Rootview from "./root";
-import Rating from "../components/rating";
-import Breadcrumb from "../components/breadcrumb";
-import { useGetProductDetailsQuery } from "../app/slices/productsApiSlice";
+import AppLayout from "../../layouts/main";
+import Rating from "../../components/rating";
+import Breadcrumb from "../../components/breadcrumb";
 import { useParams } from "react-router-dom";
+import { useGetProductDetailsQuery } from "../../services/slices/productsApiSlice";
 
 const ProductView = () => {
   const { id: productId } = useParams();
@@ -10,7 +10,7 @@ const ProductView = () => {
   const { data: product, isLoading } = useGetProductDetailsQuery(productId);
 
   return (
-    <Rootview header="Prekė">
+    <AppLayout header="Prekė">
       {isLoading ? (
         <>
           <h2>Kraunama...</h2>
@@ -70,7 +70,7 @@ const ProductView = () => {
           </div>
         </>
       )}
-    </Rootview>
+    </AppLayout>
   );
 };
 
