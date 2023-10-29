@@ -57,9 +57,12 @@ const ProductView = () => {
                   {product.countInStock > 0 && (
                     <div className="flex py-4">
                       <div className="mr-4">
-                        <span className="text-lg text-gray-600">Kiekis</span>
+                        <span className="text-md font-bold text-gray-600">
+                          Kiekis:
+                        </span>
                         <span>
                           <select
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2"
                             name="qty"
                             value={qty}
                             onChange={(e) => setQty(Number(e.target.value))}
