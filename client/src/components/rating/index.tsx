@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ProductRating } from "../../interfaces/productInterfaces";
+import { ProductRating } from "../../services/interfaces/productInterfaces";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Rating: FC<ProductRating> = (props) => {

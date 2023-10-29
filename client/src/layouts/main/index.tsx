@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Header from "../header";
 import Footer from "../footer";
-import { Root } from "../../interfaces/globalInterfaces";
+import { Root } from "../../services/interfaces/globalInterfaces";
 
 const AppLayout: FC<Root> = (props) => {
   return (

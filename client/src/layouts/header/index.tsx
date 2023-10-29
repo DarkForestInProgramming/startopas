@@ -1,7 +1,7 @@
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Product } from "../../interfaces/productInterfaces";
+import { Product } from "../../services/interfaces/productInterfaces";
 
 const Header = () => {
   const { cartItems } = useSelector((state: any) => state.cart);

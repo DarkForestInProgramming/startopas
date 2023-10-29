@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { initialState } from "../constants/cartConstants";
-import { Product } from "../../interfaces/productInterfaces";
-import { updateCart } from "../utils/cartUtils";
+import { Product } from "../interfaces/productInterfaces";
+import { updateCart } from "../utils/updateCart";
 
 const cartSlice = createSlice({
   name: "cart",

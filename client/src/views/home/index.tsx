@@ -1,6 +1,6 @@
 import Card from "../../components/card";
 import AppLayout from "../../layouts/main";
-import { Product } from "../../interfaces/productInterfaces";
+import { Product } from "../../services/interfaces/productInterfaces";
 import { useGetProductsQuery } from "../../services/slices/productsApiSlice";
 import Loader from "../../components/loader";
 
