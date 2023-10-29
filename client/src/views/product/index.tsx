@@ -1,14 +1,24 @@
+import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useGetProductDetailsQuery } from "../../services/slices/productsApiSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../services/slices/cartSlice";
 import AppLayout from "../../layouts/main";
 import Rating from "../../components/rating";
 import Breadcrumb from "../../components/breadcrumb";
-import { useParams } from "react-router-dom";
-import { useGetProductDetailsQuery } from "../../services/slices/productsApiSlice";
 import Loader from "../../components/loader";
 
 const ProductView = () => {
+  const [qty, setQty] = useState<number>(1);
   const { id: productId } = useParams();
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { data: product, isLoading } = useGetProductDetailsQuery(productId);
+
+  const addToCartHandler = () => {
+    dispatch(addToCart({ ...product, qty }));
+    navigate("/cart");
+  };
 
   return (
     <AppLayout header="Prekė">
@@ -43,6 +53,30 @@ const ProductView = () => {
                       </span>
                     </div>
                   </div>
+                  {/* Price section ends here */}
+                  {product.countInStock > 0 && (
+                    <div className="flex py-4">
+                      <div className="mr-4">
+                        <span className="text-lg text-gray-600">Kiekis</span>
+                        <span>
+                          <select
+                            name="qty"
+                            value={qty}
+                            onChange={(e) => setQty(Number(e.target.value))}
+                          >
+                            {[...Array(product.countInStock).keys()].map(
+                              (x: number) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              )
+                            )}
+                          </select>
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  {/* Select ends here */}
                   <div className="py-4">
                     <Rating
                       value={product.rating}
@@ -60,7 +94,10 @@ const ProductView = () => {
                       {product.countInStock >= 1 ? "Sandėlyje" : "Neturime"}
                     </p>
                     <div className="text-center">
-                      <button className="w-full bg-gray-900 text-white py-4 px-4 font-bold hover:bg-gray-800">
+                      <button
+                        className="w-full bg-gray-900 text-white py-4 px-4 font-bold hover:bg-gray-800"
+                        onClick={addToCartHandler}
+                      >
                         Pridėti į Krepšelį
                       </button>
                     </div>

@@ -6,7 +6,6 @@ import Loader from "../../components/loader";
 
 const HomeView = () => {
   const { data: products, isLoading } = useGetProductsQuery({});
-
   return (
     <AppLayout header="Pagrindinis">
       {isLoading ? (
