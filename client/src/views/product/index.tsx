@@ -49,7 +49,7 @@ const ProductView = () => {
                   <div className="flex py-4">
                     <div className="mr-4">
                       <span className="text-2xl text-gray-600">
-                        €{product.price}.00
+                        €{product.price.toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -62,7 +62,7 @@ const ProductView = () => {
                         </span>
                         <span>
                           <select
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2"
+                            className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block py-3 px-4 mt-2"
                             name="qty"
                             value={qty}
                             onChange={(e) => setQty(Number(e.target.value))}
