@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../services/slices/cartSlice";
+import { addToCart, removeFromCart } from "../../services/slices/cartSlice";
 import { Product } from "../../interfaces/productInterfaces";
 import AppLayout from "../../layouts/main";
 import { FaTrash } from "react-icons/fa";
@@ -14,6 +14,14 @@ const CartView = () => {
 
   const addToCartHandler = async (product: Product, qty: number) => {
     dispatch(addToCart({ ...product, qty }));
+  };
+
+  const removeFromCartHandler = async (id: string) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const checkoutHandler = () => {
+    navigate("/login?redirect=/shipping");
   };
 
   return (
@@ -71,8 +79,9 @@ const CartView = () => {
                           €{(item.price * item.qty).toFixed(2)}
                         </p>
                         <button
-                          type="button"
                           className="border rounded-md py-1 px-1 hover:text-red-600"
+                          type="button"
+                          onClick={() => removeFromCartHandler(item._id)}
                         >
                           <FaTrash />
                         </button>
@@ -115,6 +124,7 @@ const CartView = () => {
                 className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full"
                 type="button"
                 disabled={cartItems.length === 0}
+                onClick={checkoutHandler}
               >
                 Apmokėti
               </button>
