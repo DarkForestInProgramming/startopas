@@ -48,14 +48,14 @@ const authUser = asyncHandler(async (req, res) => {
   if (user && (await user.matchPassword(password))) {
     generateToken(res, user._id);
 
-    res.json({
+    res.status(200).json({
       _id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
     });
   } else {
-    res.status(200).json(401);
+    res.status(401);
     throw new Error("Blogas el. paštas arba slaptažodis.");
   }
 });

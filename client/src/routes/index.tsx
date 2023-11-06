@@ -8,6 +8,7 @@ import HomeView from "../views/home";
 import NotFoundView from "../views/404";
 import ProductView from "../views/product";
 import CartView from "../views/cart";
+import LoginView from "../views/login";
 
 const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const AppRoutes = createBrowserRouter(
       <Route index={true} path="/" element={<HomeView />} />
       <Route path="/product/:id" element={<ProductView />} />
       <Route path="/cart" element={<CartView />} />
+      <Route path="/login" element={<LoginView />} />
       <Route path="*" element={<NotFoundView />} />
     </Route>
   )
