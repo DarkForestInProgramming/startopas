@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { initialState } from "../constants/cartConstants";
-import { Product } from "../interfaces/productInterfaces";
+import { ProductInterface } from "../interfaces/productInterfaces";
 import { updateCart } from "../utils/updateCart";
 
 const cartSlice = createSlice({
@@ -11,11 +11,11 @@ const cartSlice = createSlice({
       const item = action.payload;
 
       const existItem = state.cartItems.find(
-        (x: Product) => x._id === item._id
+        (x: ProductInterface) => x._id === item._id
       );
 
       if (existItem) {
-        state.cartItems = state.cartItems.map((x: Product) =>
+        state.cartItems = state.cartItems.map((x: ProductInterface) =>
           x._id === existItem._id ? item : x
         );
       } else {
@@ -25,7 +25,7 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(
-        (x: Product) => x._id !== action.payload
+        (x: ProductInterface) => x._id !== action.payload
       );
 
       return updateCart(state);

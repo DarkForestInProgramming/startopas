@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { ProductRating } from "../../services/interfaces/productInterfaces";
+import { ProductRatingInterface } from "../../services/interfaces/productInterfaces";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
-const Rating: FC<ProductRating> = (props) => {
+const Rating: FC<ProductRatingInterface> = (props) => {
   return (
     <div className="rating-container">
       <span className="rating-star">

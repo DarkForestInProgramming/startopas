@@ -1,9 +1,9 @@
 import React from "react";
 import Rating from "../rating";
-import { ProductCard } from "../../services/interfaces/productInterfaces";
+import { ProductCardInterface } from "../../services/interfaces/productInterfaces";
 import { Link } from "react-router-dom";
 
-const Card: React.FC<ProductCard> = ({
+const Card: React.FC<ProductCardInterface> = ({
   _id,
   image,
   name,
@@ -22,14 +22,14 @@ const Card: React.FC<ProductCard> = ({
         />
       </Link>
       <Link to={`/product/${_id}`}>
-        <h3 className="text-2xl font-semibold mt-2">{name}</h3>
+        <h3 className="text-3xl font-semibold mt-2">{name}</h3>
       </Link>
       <div className="flex items-center mt-2">
         <div>
           <Rating value={rating} text={`${numReviews} įvertinimų`} />
         </div>
       </div>
-      <p className="text-xl text-gray-600 mt-2">Kaina: {price.toFixed(2)}€</p>
+      <p className="text-2xl text-gray-600 mt-2">€{price.toFixed(2)}</p>
     </div>
   );
 };

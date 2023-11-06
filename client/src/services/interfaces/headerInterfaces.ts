@@ -1,8 +1,8 @@
-import { Product } from "./productInterfaces";
+import { ProductInterface } from "./productInterfaces";
 
-export interface Header {
+export interface HeaderInterface {
   isMobileMenuOpen: boolean;
-  cartItems: Product[];
+  cartItems: ProductInterface[];
   userInfo: any;
   toggleDropdown: () => void;
   closeDropdown: () => void;

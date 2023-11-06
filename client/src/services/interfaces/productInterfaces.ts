@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductInterface {
   _id: string;
   name: string;
   image: string;
@@ -12,7 +12,7 @@ export interface Product {
   qty: number;
 }
 
-export interface ProductCard {
+export interface ProductCardInterface {
   _id: string;
   image: string;
   name: string;
@@ -21,7 +21,7 @@ export interface ProductCard {
   numReviews: number;
 }
 
-export interface ProductRating {
+export interface ProductRatingInterface {
   value: number;
   text: string;
 }

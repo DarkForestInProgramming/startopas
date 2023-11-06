@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { Product } from "../../services/interfaces/productInterfaces";
+import { ProductInterface } from "../../services/interfaces/productInterfaces";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
-import { Header } from "../../services/interfaces/headerInterfaces";
+import { HeaderInterface } from "../../services/interfaces/headerInterfaces";
 
-const MobNav: React.FC<Header> = (props) => {
+const MobNav: React.FC<HeaderInterface> = (props) => {
   return (
     <div
       className={`mt-4 mb-4 lg:hidden w-full ${
@@ -38,7 +38,8 @@ const MobNav: React.FC<Header> = (props) => {
               <>
                 <span className="bg-red-600 text-white text-xs font-medium ml-1 px-1.5  rounded-full">
                   {props.cartItems.reduce(
-                    (acc: number, current: Product) => acc + current.qty,
+                    (acc: number, current: ProductInterface) =>
+                      acc + current.qty,
                     0
                   )}
                 </span>
@@ -51,12 +52,11 @@ const MobNav: React.FC<Header> = (props) => {
             <div className="relative block py-2 pr-4 pl-3">
               <button
                 onClick={props.toggleDropdown}
-                onBlur={props.closeDropdown}
                 className="text-white rounded-lg  inline-flex items-center "
                 type="button"
               >
                 <FaUser className="inline-block text-xl" />
-                &nbsp;Profilis
+                &nbsp;{props.userInfo.name}
                 <svg
                   className="w-2.5 h-2.5 ml-1.5"
                   aria-hidden="true"
@@ -75,11 +75,11 @@ const MobNav: React.FC<Header> = (props) => {
 
               {props.isOpen && (
                 <div className="z-10 absolute  mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                  <ul className="py-2 text-sm text-gray-700">
                     <li>
                       <Link
                         to="/profile"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100"
                       >
                         Mano Paskyra
                       </Link>
@@ -87,7 +87,7 @@ const MobNav: React.FC<Header> = (props) => {
                     <li>
                       <p
                         onClick={props.logoutHandler}
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
                       >
                         Atsijungti
                       </p>

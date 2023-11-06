@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart, removeFromCart } from "../slices/cartSlice";
-import { Product } from "../interfaces/productInterfaces";
+import { ProductInterface } from "../interfaces/productInterfaces";
 
 export const useCartHandlers = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export const useCartHandlers = () => {
   const cart = useSelector((state: any) => state.cart);
   const { cartItems } = cart;
 
-  const addToCartHandler = async (product: Product, qty: number) => {
+  const addToCartHandler = async (product: ProductInterface, qty: number) => {
     dispatch(addToCart({ ...product, qty }));
   };
 

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface Root {
+export interface RootInterface {
   header: string;
   children: ReactNode;
 }

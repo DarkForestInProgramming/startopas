@@ -1,4 +1,4 @@
-import { Product } from "../../services/interfaces/productInterfaces";
+import { ProductInterface } from "../../services/interfaces/productInterfaces";
 import { useCartHandlers } from "../../services/handlers/cartHandlers";
 import AppLayout from "../../layouts/main";
 import CartItem from "../../components/cart/cartItem";
@@ -24,7 +24,7 @@ const CartView = () => {
         ) : (
           <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
             <div className="rounded-lg md:w-2/3">
-              {cartItems.map((item: Product) => (
+              {cartItems.map((item: ProductInterface) => (
                 <CartItem
                   _id={item._id}
                   name={item.name}

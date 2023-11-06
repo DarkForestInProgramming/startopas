@@ -1,4 +1,4 @@
-import { Product } from "../../interfaces/productInterfaces";
+import { ProductInterface } from "../../interfaces/productInterfaces";
 
 const addDecimals = (num: number) => {
   return (Math.round(num * 100) / 100).toFixed(2);
@@ -8,7 +8,7 @@ export const updateCart = (state: any) => {
   //@desc Calculate items price
   state.itemsPrice = addDecimals(
     state.cartItems.reduce(
-      (acc: number, item: Product) => acc + item.price * item.qty,
+      (acc: number, item: ProductInterface) => acc + item.price * item.qty,
       0
     )
   );

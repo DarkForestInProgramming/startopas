@@ -1,6 +1,9 @@
-import { Product } from "../../services/interfaces/productInterfaces";
+import { ProductInterface } from "../../services/interfaces/productInterfaces";
 
-const SubTotal = (props: { checkoutHandler: any; cartItems: Product[] }) => {
+const SubTotal = (props: {
+  checkoutHandler: any;
+  cartItems: ProductInterface[];
+}) => {
   return (
     <div className="mt-6 h-full rounded-lg border  p-6 shadow-md md:mt-0 md:w-1/3">
       <div className="mb-2 flex justify-between">
@@ -8,7 +11,7 @@ const SubTotal = (props: { checkoutHandler: any; cartItems: Product[] }) => {
         <p>
           (
           {props.cartItems.reduce(
-            (acc: number, item: Product) => acc + item.qty,
+            (acc: number, item: ProductInterface) => acc + item.qty,
             0
           )}
           )
@@ -22,7 +25,8 @@ const SubTotal = (props: { checkoutHandler: any; cartItems: Product[] }) => {
             €
             {props.cartItems
               .reduce(
-                (acc: number, item: Product) => acc + item.qty * item.price,
+                (acc: number, item: ProductInterface) =>
+                  acc + item.qty * item.price,
                 0
               )
               .toFixed(2)}
