@@ -24,7 +24,7 @@ const LoginView = () => {
 
   return (
     <AppLayout header="Prisijungti">
-      <section>
+      <section className="md:py-16 py-4">
         <LoginForm
           submitHandler={submitHandler}
           email={email}

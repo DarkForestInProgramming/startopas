@@ -9,7 +9,9 @@ const AppLayout: FC<RootInterface> = (props) => {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <main className="flex-grow py-3">{props.children}</main>
+      <main className="flex-grow md:container md:mx-auto">
+        {props.children}
+      </main>
       <Footer />
       <ToastContainer />
     </div>

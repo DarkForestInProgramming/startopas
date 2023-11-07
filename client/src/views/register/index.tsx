@@ -28,7 +28,7 @@ const RegisterView = () => {
 
   return (
     <AppLayout header="Registracija">
-      <section>
+      <section className="md:py-16 py-4">
         <RegisterForm
           submitHandler={submitHandler}
           name={name}

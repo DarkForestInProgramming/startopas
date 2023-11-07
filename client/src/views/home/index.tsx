@@ -11,7 +11,7 @@ const HomeView = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <main className="flex-grow py-3 mx-5">
+        <main className="flex-grow mx-5 md:py-16 py-4">
           <div className="text-start">
             <h1 className="text-2xl font-bold">Naujausios prekės</h1>
           </div>
@@ -28,6 +28,26 @@ const HomeView = () => {
               />
             ))}
           </div>
+          {/* Grid */}
+          {/* <div className="text-start py-5">
+            <h1 className="text-2xl font-bold">Kažkokios prekės</h1>
+          </div> */}
+          {/* <div className="py-5">
+            <div className="flex flex-col items-center bg-neutral-100 text-center text-white">
+              <div className="container p-6">
+                <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+                  <div className="mb-6 lg:mb-0">
+                    <img
+                      src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
+                      className="w-full rounded-md shadow-lg"
+                      alt="Img"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </main>
       )}
     </AppLayout>

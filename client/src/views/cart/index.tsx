@@ -15,7 +15,7 @@ const CartView = () => {
 
   return (
     <AppLayout header="Krepšelis">
-      <div className="w-full pt-20 lg:pt-28">
+      <div className="w-full md:py-16 py-8">
         <h2 className="mb-10 text-center text-3xl font-bold">
           Prekių Krepšelis
         </h2>

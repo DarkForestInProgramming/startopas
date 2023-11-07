@@ -18,7 +18,7 @@ const ProductView = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="flex h-full items-center justify-center">
+        <div className="flex h-full items-center justify-center py-4 md:py-0">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row -mx-4">
               <ImgSection image={product.image} name={product.name} />
