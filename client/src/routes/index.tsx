@@ -12,6 +12,7 @@ import LoginView from "../views/login";
 import RegisterView from "../views/register";
 import ShippingView from "../views/shipping";
 import PrivateRoute from "./privateRoute";
+import PaymentView from "../views/payment";
 
 const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const AppRoutes = createBrowserRouter(
       {/* @desc Private Routes */}
       <Route path="" element={<PrivateRoute />}>
         <Route path="/shipping" element={<ShippingView />} />
+        <Route path="/payment" element={<PaymentView />} />
       </Route>
     </Route>
   )
