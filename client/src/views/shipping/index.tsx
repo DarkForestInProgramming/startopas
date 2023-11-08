@@ -1,6 +1,7 @@
 import AppLayout from "../../layouts/main";
 import ShippingForm from "../../components/form/shippForm";
 import { useShippingHandlers } from "../../services/handlers/shippHandlers";
+import SecondStep from "../../components/checkoutSteps/secondStep";
 
 const ShippingView = () => {
   const {
@@ -17,6 +18,7 @@ const ShippingView = () => {
 
   return (
     <AppLayout header="Pristatymas">
+      <SecondStep />
       <ShippingForm
         address={address}
         setAddress={setAddress}

@@ -2,7 +2,7 @@ import { ShippingInterface } from "../../services/interfaces/paymentInterfaces";
 
 const ShippingForm: React.FC<ShippingInterface> = (props) => {
   return (
-    <main className="md:py-16 py-4">
+    <div className="mt-5 md:mt-10">
       <div className="bg-white p-6 md:p-24 shadow-md rounded-lg ">
         <h1 className="text-2xl font-semibold mb-4">Pristatymo Informacija</h1>
         <form onSubmit={props.submitHandler}>
@@ -58,7 +58,7 @@ const ShippingForm: React.FC<ShippingInterface> = (props) => {
           </div>
         </form>
       </div>
-    </main>
+    </div>
   );
 };
 

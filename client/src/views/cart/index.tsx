@@ -4,6 +4,7 @@ import AppLayout from "../../layouts/main";
 import CartItem from "../../components/cart/cartItem";
 import EmptySection from "../../components/cart/emptySection";
 import SubTotal from "../../components/cart/subTotal";
+import FirstStep from "../../components/checkoutSteps/firstStep";
 
 const CartView = () => {
   const {
@@ -15,9 +16,10 @@ const CartView = () => {
 
   return (
     <AppLayout header="Krepšelis">
-      <div className="w-full md:py-16 py-8">
+      <FirstStep />
+      <div className="w-full py-10">
         <h2 className="mb-10 text-center text-3xl font-bold">
-          Prekių Krepšelis
+          Pirkinių Krepšelis
         </h2>
         {cartItems.length === 0 ? (
           <EmptySection />
