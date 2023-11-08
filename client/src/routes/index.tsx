@@ -10,6 +10,7 @@ import ProductView from "../views/product";
 import CartView from "../views/cart";
 import LoginView from "../views/login";
 import RegisterView from "../views/register";
+import ShippingView from "../views/shipping";
 
 const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const AppRoutes = createBrowserRouter(
       <Route path="/cart" element={<CartView />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/register" element={<RegisterView />} />
+      <Route path="/shipping" element={<ShippingView />} />
       <Route path="*" element={<NotFoundView />} />
     </Route>
   )
