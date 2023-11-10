@@ -13,6 +13,8 @@ import RegisterView from "../views/register";
 import ShippingView from "../views/shipping";
 import PrivateRoute from "./privateRoute";
 import PaymentView from "../views/payment";
+import PlaceOrderView from "../views/placeOrder";
+import OrderView from "../views/order";
 
 const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +30,8 @@ const AppRoutes = createBrowserRouter(
       <Route path="" element={<PrivateRoute />}>
         <Route path="/shipping" element={<ShippingView />} />
         <Route path="/payment" element={<PaymentView />} />
+        <Route path="/placeorder" element={<PlaceOrderView />} />
+        <Route path="/order/:id" element={<OrderView />} />
       </Route>
     </Route>
   )
