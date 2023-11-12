@@ -21,3 +21,16 @@ export interface RegisterInterface {
   isLoading: any;
   redirect: any;
 }
+
+export interface UpdateInterface {
+  submitHandler: (e: React.FormEvent) => Promise<void>;
+  name: string;
+  setName: Function;
+  email: string;
+  setEmail: Function;
+  password: string;
+  setPassword: Function;
+  confirmPassword: string;
+  setConfirmPassword: Function;
+  loadingUpdateProfile: any;
+}

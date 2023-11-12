@@ -15,6 +15,7 @@ import PrivateRoute from "./privateRoute";
 import PaymentView from "../views/payment";
 import PlaceOrderView from "../views/placeOrder";
 import OrderView from "../views/order";
+import ProfileView from "../views/profile";
 
 const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,7 @@ const AppRoutes = createBrowserRouter(
         <Route path="/payment" element={<PaymentView />} />
         <Route path="/placeorder" element={<PlaceOrderView />} />
         <Route path="/order/:id" element={<OrderView />} />
+        <Route path="/profile" element={<ProfileView />} />
       </Route>
     </Route>
   )
