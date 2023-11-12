@@ -1,17 +1,8 @@
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { CartInterface } from "../../services/interfaces/orderInterfaces";
 
-const CartItem = (props: {
-  _id: string;
-  name: string;
-  image: string;
-  category: string;
-  countInStock: number;
-  price: number;
-  qty: number;
-  addToCartHandler: any;
-  removeFromCartHandler: any;
-}) => {
+const CartItem: React.FC<CartInterface> = (props) => {
   return (
     <div
       className="justify-between mb-6 rounded-lg border border-white p-6 shadow-md sm:flex sm:justify-start"
@@ -51,8 +42,7 @@ const CartItem = (props: {
               €{(props.price * props.qty).toFixed(2)}
             </p>
             <button
-              className="border rounded-md py-1 px-1 hover:text-red-600"
-              type="button"
+              className="py-1 px-1 hover:text-red-600"
               onClick={() => props.removeFromCartHandler(props._id)}
             >
               <FaTrash />

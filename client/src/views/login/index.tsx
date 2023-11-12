@@ -23,7 +23,7 @@ const LoginView = () => {
   }, [userInfo, redirect, navigate]);
 
   return (
-    <AppLayout header="Prisijungti">
+    <AppLayout>
       <section className="md:py-16 py-4">
         <LoginForm
           submitHandler={submitHandler}

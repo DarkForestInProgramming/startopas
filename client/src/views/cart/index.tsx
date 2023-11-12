@@ -15,7 +15,7 @@ const CartView = () => {
   } = useCartHandlers();
 
   return (
-    <AppLayout header="Krepšelis">
+    <AppLayout>
       <FirstStep />
       <div className="w-full py-10">
         <h2 className="mb-10 text-center text-3xl font-bold">
@@ -26,8 +26,9 @@ const CartView = () => {
         ) : (
           <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
             <div className="rounded-lg md:w-2/3">
-              {cartItems.map((item: ProductInterface) => (
+              {cartItems.map((item: ProductInterface, idx: KeyType) => (
                 <CartItem
+                  key={idx}
                   _id={item._id}
                   name={item.name}
                   image={item.image}

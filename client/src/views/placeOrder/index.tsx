@@ -3,8 +3,9 @@ import AppLayout from "../../layouts/main";
 import { useEffect } from "react";
 import FourthStep from "../../components/checkoutSteps/fourthStep";
 import { ProductInterface } from "../../services/interfaces/productInterfaces";
-import SmallLoader from "../../components/loader/smallLoad";
 import { usePlaceOrderHandlers } from "../../services/handlers/placeOrdHandlers";
+import PlaceCartItem from "../../components/cart/placeCartItem";
+import PlaceCartTotal from "../../components/cart/placeCartTotal";
 
 const PlaceOrderView = () => {
   const { cart, navigate, placeOrderHandler, isLoading } =
@@ -19,7 +20,7 @@ const PlaceOrderView = () => {
   }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
 
   return (
-    <AppLayout header="Užsakymo sukūrimas">
+    <AppLayout>
       <FourthStep />
       <div className="w-full py-5 md:py-10 items-center justify-center">
         <div className="container mx-auto">
@@ -37,32 +38,11 @@ const PlaceOrderView = () => {
                   <h2>Pirkinių krepšelis tuščias</h2>
                 ) : (
                   <>
-                    {cart.cartItems.map((item: ProductInterface, idx: any) => (
-                      <div
-                        className="flex items-center -mx-4 px-4 py-4"
-                        key={idx}
-                      >
-                        <div className="flex w-full">
-                          <div className="w-1/2 md:w-1/5 lg:w-1/5">
-                            <Link to={`/product/${item._id}`}>
-                              <img
-                                className="w-full h-20 sm:w-full sm:h-24"
-                                src={item.image}
-                                alt={item.name}
-                              />
-                            </Link>
-                          </div>
-                          <div className="w-3/4 md:w-4/5 lg:w-4/5 pl-4">
-                            <span className="font-bold text-sm">
-                              {item.name}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="w-1/5 text-center">
-                          {item.qty} x {item.price}€ = {item.qty * item.price}€
-                        </div>
-                      </div>
-                    ))}
+                    {cart.cartItems.map(
+                      (item: ProductInterface, idx: KeyType) => (
+                        <PlaceCartItem key={idx} item={item} />
+                      )
+                    )}
                   </>
                 )}
                 <Link to="/" className="flex font-semibold  text-sm mt-4">
@@ -72,33 +52,11 @@ const PlaceOrderView = () => {
                   Tęsti apsipirkimą
                 </Link>
               </div>
-
-              <div
-                id="summary"
-                className="w-full lg:w-1/4 px-4 py-4 mt-6 lg:mt-0"
-              >
-                <h1 className="font-semibold text-2xl border-b pb-4">
-                  Iš Viso
-                </h1>
-                <div className="mt-4">
-                  <div className="flex font-semibold justify-between py-4 text-sm uppercase">
-                    <span>Bendra Suma:</span>
-                    <span>{cart.itemsPrice}€</span>
-                  </div>
-                  <button
-                    className="py-3 w-full bg-gray-900 text-white hover:bg-gray-800 font-medium rounded text-sm text-center shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-                    disabled={cart.cartItems.length === 0}
-                    onClick={placeOrderHandler}
-                  >
-                    Pirkti
-                  </button>
-                </div>
-                {isLoading && (
-                  <div className="mx-auto mt-4">
-                    <SmallLoader />
-                  </div>
-                )}
-              </div>
+              <PlaceCartTotal
+                cart={cart}
+                isLoading={isLoading}
+                placeOrderHandler={placeOrderHandler}
+              />
             </div>
           </div>
         </div>

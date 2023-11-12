@@ -1,6 +1,7 @@
 import { usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { useParams } from "react-router-dom";
 import {
+  useDeliverOrderMutation,
   useGetOrderDetailsQuery,
   useGetPayPalClientIdQuery,
   usePayOrderMutation,
@@ -13,6 +14,9 @@ export const useOrderHandlers = () => {
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
   const { data: order, refetch, isLoading } = useGetOrderDetailsQuery(orderId);
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
+  const [deliverOrder, { isLoading: loadingDeliver }] =
+    useDeliverOrderMutation();
+
   const {
     data: paypal,
     isLoading: loadingPayPal,
@@ -68,6 +72,16 @@ export const useOrderHandlers = () => {
       });
   };
 
+  const deliverOrderHandler = async () => {
+    try {
+      await deliverOrder(orderId);
+      refetch();
+      toast.success("Užsakymas pristatytas.");
+    } catch (error: any) {
+      toast.error(error?.data?.message || error.message);
+    }
+  };
+
   return {
     errorPayPal,
     loadingPayPal,
@@ -82,5 +96,7 @@ export const useOrderHandlers = () => {
     onApprove,
     onError,
     userInfo,
+    loadingDeliver,
+    deliverOrderHandler,
   };
 };

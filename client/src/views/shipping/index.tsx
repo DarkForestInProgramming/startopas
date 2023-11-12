@@ -17,7 +17,7 @@ const ShippingView = () => {
   } = useShippingHandlers();
 
   return (
-    <AppLayout header="Pristatymas">
+    <AppLayout>
       <SecondStep />
       <ShippingForm
         address={address}

@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 import { OrderInterface } from "../../services/interfaces/orderInterfaces";
 import Loader from "../loader";
 
-const ProfileTable = (props: { isLoading: any; orders: any }) => {
+const ProfileTable = (props: {
+  isLoading: boolean;
+  orders: OrderInterface[];
+}) => {
   return (
     <div className="md:w-1/2 md:mt-5 md:ml-40 lg:ml-48 items-center justify-center text-center ">
-      <h2 className="text-xl mb-8">Mano Užsakymai</h2>
+      <h2 className="text-xl mb-8 font-semibold">Mano Užsakymai</h2>
       {props.isLoading ? (
-        <div className="w-full flex flex-col pt-20 lg:pt-36 ">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Loader />
-          </div>
-        </div>
+        <Loader />
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full table-fixed text-sm md:text-base">

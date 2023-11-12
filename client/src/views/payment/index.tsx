@@ -15,7 +15,7 @@ const PaymentView = () => {
   }, [shippingAddress, navigate]);
 
   return (
-    <AppLayout header="Atsiskaitymas">
+    <AppLayout>
       <ThirdStep />
       <PaymentForm
         setPaymentMethod={setPaymentMethod}

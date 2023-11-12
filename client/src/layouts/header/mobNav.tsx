@@ -22,14 +22,6 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
         </li>
         <li>
           <Link
-            to="#"
-            className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 hover:text-gray-900"
-          >
-            Prekės
-          </Link>
-        </li>
-        <li>
-          <Link
             className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 hover:text-gray-900"
             to="/cart"
           >
@@ -50,10 +42,9 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
         <li>
           {props.userInfo ? (
             <div className="relative block py-2 pr-4 pl-3">
-              <button
+              <div
                 onClick={props.toggleDropdown}
-                className="text-white rounded-lg  inline-flex items-center "
-                type="button"
+                className="inline-flex items-center cursor-pointer"
               >
                 <FaUser className="inline-block text-xl" />
                 &nbsp;{props.userInfo.name}
@@ -65,16 +56,16 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="m1 1 4 4 4-4"
                   />
                 </svg>
-              </button>
+              </div>
 
               {props.isOpen && (
-                <div className="z-10 absolute  mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <div className="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                   <ul className="py-2 text-sm text-gray-700">
                     <li>
                       <Link
@@ -84,6 +75,16 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
                         Mano Paskyra
                       </Link>
                     </li>
+                    {props.userInfo && props.userInfo.isAdmin && (
+                      <li>
+                        <Link
+                          to="/admin/orderList"
+                          className="block px-4 py-2 hover:bg-gray-100 "
+                        >
+                          Užsakymai
+                        </Link>
+                      </li>
+                    )}
                     <li>
                       <p
                         onClick={props.logoutHandler}

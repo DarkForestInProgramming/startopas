@@ -13,20 +13,11 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
         <li>
           <Link
             to="/"
-            className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:text-gray-400 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+            className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:text-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 lg:p-0"
           >
             Pagrindinis
           </Link>
         </li>
-        <li>
-          <Link
-            to="/"
-            className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:text-gray-400 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-          >
-            Prekės
-          </Link>
-        </li>
-
         <li>
           <Link to="/cart" className="hover:text-gray-400">
             <FaShoppingCart className="inline-block text-xl" /> Krepšelis
@@ -46,30 +37,30 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
         <li>
           {props.userInfo ? (
             <div className="relative">
-              <button
+              <div
                 onClick={props.toggleDropdown}
-                className="text-white rounded-lg  inline-flex items-center "
-                type="button"
+                className="inline-flex items-center cursor-pointer"
               >
+                <FaUser className="inline-block text-lg mr-1" />
                 {props.userInfo.name}
                 <svg
-                  className="w-2.5 h-2.5 ml-2.5"
+                  className="w-2.5 h-2.5 ml-1.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 10 6"
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="m1 1 4 4 4-4"
                   />
                 </svg>
-              </button>
+              </div>
 
               {props.isOpen && (
-                <div className="z-10 absolute  mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <div className="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                   <ul className="py-2 text-sm text-gray-700 ">
                     <li>
                       <Link
@@ -79,6 +70,16 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
                         Mano Paskyra
                       </Link>
                     </li>
+                    {props.userInfo && props.userInfo.isAdmin && (
+                      <li>
+                        <Link
+                          to="/admin/orderList"
+                          className="block px-4 py-2 hover:bg-gray-100 "
+                        >
+                          Užsakymai
+                        </Link>
+                      </li>
+                    )}
                     <li>
                       <p
                         onClick={props.logoutHandler}

@@ -16,6 +16,8 @@ import PaymentView from "../views/payment";
 import PlaceOrderView from "../views/placeOrder";
 import OrderView from "../views/order";
 import ProfileView from "../views/profile";
+import AdminRoute from "./adminRoute";
+import OrderListView from "../views/admin/orderList";
 
 const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +36,10 @@ const AppRoutes = createBrowserRouter(
         <Route path="/placeorder" element={<PlaceOrderView />} />
         <Route path="/order/:id" element={<OrderView />} />
         <Route path="/profile" element={<ProfileView />} />
+      </Route>
+      {/* @desc Admin Routes */}
+      <Route path="" element={<AdminRoute />}>
+        <Route path="/admin/orderList" element={<OrderListView />} />
       </Route>
     </Route>
   )

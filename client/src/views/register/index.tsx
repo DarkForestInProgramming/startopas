@@ -27,7 +27,7 @@ const RegisterView = () => {
   }, [userInfo, redirect, navigate]);
 
   return (
-    <AppLayout header="Registracija">
+    <AppLayout>
       <section className="md:py-16 py-4">
         <RegisterForm
           submitHandler={submitHandler}

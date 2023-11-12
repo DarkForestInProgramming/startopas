@@ -29,11 +29,10 @@ const ProfileView = () => {
   }, [userInfo.name, userInfo.email]);
 
   return (
-    <AppLayout header="Profilis">
+    <AppLayout>
       <div className="w-full py-8 md:py-16 flex items-center justify-center">
         <div className="max-w-10xl mx-auto lg:ml-4 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row">
-            {/* Form Block on the Left */}
             <ProfileForm
               submitHandler={submitHandler}
               name={name}
@@ -46,7 +45,6 @@ const ProfileView = () => {
               setConfirmPassword={setConfirmPassword}
               loadingUpdateProfile={loadingUpdateProfile}
             />
-            {/* Table with Orders on the Right */}
             <ProfileTable orders={orders} isLoading={isLoading} />
           </div>
         </div>

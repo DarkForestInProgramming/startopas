@@ -49,12 +49,7 @@ const ShippingForm: React.FC<ShippingInterface> = (props) => {
             </div>
           </div>
           <div className="text-center mt-4 md:mt-6">
-            <button
-              type="submit"
-              className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full md:w-32 hover:bg-blue-600"
-            >
-              Tęsti
-            </button>
+            <button className="py-2 px-4 roun w-full md:w-32 ">Tęsti</button>
           </div>
         </form>
       </div>

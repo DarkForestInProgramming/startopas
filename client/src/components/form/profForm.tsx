@@ -7,7 +7,7 @@ const ProfileForm: React.FC<UpdateInterface> = (props) => {
       onSubmit={props.submitHandler}
       className="shadow-md rounded px-4 pt-6 pb-8 mb-6 md:w-1/4 md:mr-6"
     >
-      <h2 className="mb-6 text-xl">Vartotojo profilis</h2>
+      <h2 className="mb-6 text-xl font-semibold">Vartotojo profilis</h2>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2" htmlFor="name">
           Vardas
