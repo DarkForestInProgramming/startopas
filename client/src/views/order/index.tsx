@@ -1,13 +1,36 @@
-import { useParams } from "react-router-dom";
-import { useGetOrderDetailsQuery } from "../../services/slices/ordersApiSlice";
+import { useEffect } from "react";
+import { PayPalButtons } from "@paypal/react-paypal-js";
 import Loader from "../../components/loader";
 import AppLayout from "../../layouts/main";
 import { ProductInterface } from "../../services/interfaces/productInterfaces";
+import { useOrderHandlers } from "../../services/handlers/orderHandlers";
 
 const OrderView = () => {
-  const { id: orderId } = useParams();
+  const {
+    errorPayPal,
+    loadingPayPal,
+    paypal,
+    order,
+    paypalDispatch,
+    isLoading,
+    isPending,
+    loadPayPalScript,
+    loadingPay,
+    createOrder,
+    onApprove,
+    onError,
+  } = useOrderHandlers();
 
-  const { data: order, refetch, isLoading } = useGetOrderDetailsQuery(orderId);
+  useEffect(() => {
+    if (!errorPayPal && !loadingPayPal && paypal.clientId) {
+      loadPayPalScript();
+      if (order && !order.isPaid) {
+        if (!window.paypal) {
+          loadPayPalScript();
+        }
+      }
+    }
+  }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
   return (
     <AppLayout header="Užsakymas">
@@ -119,6 +142,24 @@ const OrderView = () => {
                   <p>{order.totalPrice}€</p>
                 </div>
               </div>
+              {!order.isPaid && (
+                <>
+                  {loadingPay && <Loader />}
+                  {isPending ? (
+                    <div className="mt-4">
+                      <Loader />
+                    </div>
+                  ) : (
+                    <div className="mt-5 flex justify-end">
+                      <PayPalButtons
+                        createOrder={createOrder}
+                        onApprove={onApprove}
+                        onError={onError}
+                      ></PayPalButtons>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>
