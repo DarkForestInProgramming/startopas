@@ -13,19 +13,22 @@ const port = process.env.PORT;
 connectDB();
 const app = express();
 
+//  @desc Middlewares
+
 //  @desc Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//  @desc Cookie parser middleware
 app.use(cookieParser());
-
-//  @desc Enabling the Helmet middleware
 app.use(helmet());
+app.use(notFound);
+app.use(errorHandler);
 
 app.get("/", (req, res) => {
   res.send("API is running.");
 });
+
+// @desc  Routes
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
@@ -35,7 +38,6 @@ app.get("/api/config/paypal", (req, res) =>
   res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
 );
 
-app.use(notFound);
-app.use(errorHandler);
+// @desc  Connection
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));
