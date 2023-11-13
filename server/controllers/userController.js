@@ -1,10 +1,6 @@
-// import asyncHandler from "express-async-handler";
-// import User from "../models/User.js";
-// import generateToken from "../utils/generateToken.js";
-
-const asyncHandler = require("express-async-handler");
-const User = require("../models/User.js");
-const generateToken = require("../utils/generateToken.js");
+import asyncHandler from "express-async-handler";
+import User from "../models/User.js";
+import generateToken from "../utils/generateToken.js";
 
 // User Functions
 
@@ -125,60 +121,10 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-// Admin Functions
-
-// @desc    Get users
-// @desc    PUT /api/users
-// @access  Private/Admin
-
-const getUsers = asyncHandler(async (req, res) => {
-  res.send("get users");
-});
-
-// @desc    Delete user
-// @desc    DELETE /api/users/:id
-// @access  Private/Admin
-
-const deleteUser = asyncHandler(async (req, res) => {
-  res.send("delete users");
-});
-
-// @desc    Get user by ID
-// @desc    GET /api/users/:id
-// @access  Private/Admin
-
-const getUserByID = asyncHandler(async (req, res) => {
-  res.send("get user by ID");
-});
-
-// @desc    Update user
-// @desc    PUT /api/users/:id
-// @access  Private/Admin
-
-const updateUser = asyncHandler(async (req, res) => {
-  res.send("update user");
-});
-
-// export {
-//   registerUser,
-//   authUser,
-//   logoutUser,
-//   getUserProfile,
-//   updateUserProfile,
-//   getUsers,
-//   deleteUser,
-//   getUserByID,
-//   updateUser,
-// };
-
-module.exports = {
+export {
   registerUser,
   authUser,
   logoutUser,
   getUserProfile,
   updateUserProfile,
-  getUsers,
-  deleteUser,
-  getUserByID,
-  updateUser,
 };

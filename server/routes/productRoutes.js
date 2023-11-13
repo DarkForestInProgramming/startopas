@@ -1,20 +1,12 @@
-// import express from "express";
-// import {
-//   getProducts,
-//   getProductById,
-// } from "../controllers/productController.js";
-
-const express = require("express");
-const {
+import express from "express";
+import {
   getProducts,
   getProductById,
-} = require("../controllers/productController.js");
+} from "../controllers/productController.js";
 
 const router = express.Router();
 
 router.route("/").get(getProducts);
 router.route("/:id").get(getProductById);
 
-// export default router;
-
-module.exports = router;
+export default router;
