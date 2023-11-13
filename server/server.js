@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import helmet from "helmet";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 dotenv.config();
 import connectDB from "./config/db.js";
@@ -23,12 +24,17 @@ app.use(cookieParser());
 app.use(helmet());
 // app.use(notFound);
 app.use(errorHandler);
+app.use(
+  cors({
+    origin: process.env.ADDRESS,
+  })
+);
+
+// @desc  Routes
 
 app.get("/", (req, res) => {
   res.send("API is running.");
 });
-
-// @desc  Routes
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
