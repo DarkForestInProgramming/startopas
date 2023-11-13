@@ -1,13 +1,24 @@
-import express from "express";
-import dotenv from "dotenv";
-import helmet from "helmet";
-import cookieParser from "cookie-parser";
+// import express from "express";
+// import dotenv from "dotenv";
+// import helmet from "helmet";
+// import cookieParser from "cookie-parser";
+// dotenv.config();
+// import connectDB from "./config/db.js";
+// import productRoutes from "./routes/productRoutes.js";
+// import userRoutes from "./routes/userRoutes.js";
+// import orderRoutes from "./routes/orderRoutes.js";
+// import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+
+const express = require("express");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
+const cookieParser = require("cookie-parser");
 dotenv.config();
-import connectDB from "./config/db.js";
-import productRoutes from "./routes/productRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
-import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+const connectDB = require("./config/db.js");
+const productRoutes = require("./routes/productRoutes.js");
+const userRoutes = require("./routes/userRoutes.js");
+const orderRoutes = require("./routes/orderRoutes.js");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
 
 const port = process.env.PORT;
 connectDB();

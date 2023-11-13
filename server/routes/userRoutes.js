@@ -1,5 +1,19 @@
-import express from "express";
-import {
+// import express from "express";
+// import {
+//   registerUser,
+//   authUser,
+//   logoutUser,
+//   getUserProfile,
+//   updateUserProfile,
+//   getUsers,
+//   deleteUser,
+//   getUserByID,
+//   updateUser,
+// } from "../controllers/userController.js";
+// import { protect, admin } from "../middleware/authMiddleware.js";
+
+const express = require("express");
+const {
   registerUser,
   authUser,
   logoutUser,
@@ -9,8 +23,8 @@ import {
   deleteUser,
   getUserByID,
   updateUser,
-} from "../controllers/userController.js";
-import { protect, admin } from "../middleware/authMiddleware.js";
+} = require("../controllers/userController.js");
+const { protect, admin } = require("../middleware/authMiddleware.js");
 
 const router = express.Router();
 
@@ -27,4 +41,6 @@ router
   .get(protect, admin, getUserByID)
   .put(protect, admin, updateUser);
 
-export default router;
+// export default router;
+
+module.exports = router;
