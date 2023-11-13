@@ -13,6 +13,11 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 const port = process.env.PORT;
 connectDB();
 const app = express();
+app.use(
+  cors({
+    origin: process.env.ADDRESS,
+  })
+);
 
 //  @desc Middlewares
 
@@ -24,11 +29,6 @@ app.use(cookieParser());
 app.use(helmet());
 // app.use(notFound);
 app.use(errorHandler);
-app.use(
-  cors({
-    origin: process.env.ADDRESS,
-  })
-);
 
 // @desc  Routes
 
