@@ -1,6 +1,6 @@
 import React from "react";
 import Rating from "../rating";
-import { ProductCardInterface } from "../../services/interfaces/productInterfaces";
+import { ProductCardInterface } from "../../../services/interfaces/productInterfaces";
 import { Link } from "react-router-dom";
 
 const Card: React.FC<ProductCardInterface> = (props) => {

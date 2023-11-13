@@ -1,7 +1,8 @@
 import AppLayout from "../../layouts/main";
-import ShippingForm from "../../components/form/shippForm";
+import ShippingForm from "../../components/ui/form/shippForm";
 import { useShippingHandlers } from "../../services/handlers/shippHandlers";
-import SecondStep from "../../components/checkoutSteps/secondStep";
+import SecondStep from "../../components/ui/checkoutSteps/secondStep";
+import Meta from "../../components/meta";
 
 const ShippingView = () => {
   const {
@@ -18,6 +19,7 @@ const ShippingView = () => {
 
   return (
     <AppLayout>
+      <Meta title="Pristatymas" />
       <SecondStep />
       <ShippingForm
         address={address}

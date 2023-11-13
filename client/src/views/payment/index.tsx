@@ -1,8 +1,9 @@
 import AppLayout from "../../layouts/main";
-import ThirdStep from "../../components/checkoutSteps/thirdStep";
+import ThirdStep from "../../components/ui/checkoutSteps/thirdStep";
 import { usePaymentHandlers } from "../../services/handlers/payHandlers";
 import { useEffect } from "react";
-import PaymentForm from "../../components/form/payForm";
+import PaymentForm from "../../components/ui/form/payForm";
+import Meta from "../../components/meta";
 
 const PaymentView = () => {
   const { shippingAddress, setPaymentMethod, navigate, submitHandler } =
@@ -16,6 +17,7 @@ const PaymentView = () => {
 
   return (
     <AppLayout>
+      <Meta title="Atsiskaitymo būdas" />
       <ThirdStep />
       <PaymentForm
         setPaymentMethod={setPaymentMethod}

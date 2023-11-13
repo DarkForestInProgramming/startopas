@@ -1,4 +1,4 @@
-import { UpdateInterface } from "../../services/interfaces/authInterfaces";
+import { UpdateInterface } from "../../../services/interfaces/authInterfaces";
 import SmallLoader from "../loader/smallLoad";
 
 const ProfileForm: React.FC<UpdateInterface> = (props) => {

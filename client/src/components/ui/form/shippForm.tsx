@@ -1,4 +1,4 @@
-import { ShippingInterface } from "../../services/interfaces/paymentInterfaces";
+import { ShippingInterface } from "../../../services/interfaces/paymentInterfaces";
 
 const ShippingForm: React.FC<ShippingInterface> = (props) => {
   return (

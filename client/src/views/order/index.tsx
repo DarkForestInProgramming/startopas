@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import Loader from "../../components/loader";
+import Loader from "../../components/ui/loader";
 import AppLayout from "../../layouts/main";
 import { useOrderHandlers } from "../../services/handlers/orderHandlers";
-import OrderTable from "../../components/table/orderTable";
-import UserSection from "../../components/order/userSection";
-import PayDetailsSection from "../../components/order/payDetailsSection";
-import SummarySection from "../../components/order/summSection";
-import MarkSection from "../../components/order/markSection";
+import OrderTable from "../../components/ui/table/orderTable";
+import UserSection from "../../partials/order/_userSection";
+import PayDetailsSection from "../../partials/order/_payDetailsSection";
+import SummarySection from "../../partials/order/_summSection";
+import MarkSection from "../../partials/order/_markSection";
+import Meta from "../../components/meta";
 
 const OrderView = () => {
   const {
@@ -40,6 +41,7 @@ const OrderView = () => {
 
   return (
     <AppLayout>
+      <Meta title={`Užsakymas`} />
       {isLoading ? (
         <Loader />
       ) : (

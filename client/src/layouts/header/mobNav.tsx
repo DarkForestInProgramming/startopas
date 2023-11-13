@@ -11,18 +11,18 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
       }`}
       id="mobile-menu-2"
     >
-      <ul className="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+      <ul className="flex flex-col font-mono lg:flex-row lg:space-x-8 lg:mt-0">
         <li>
           <Link
             to="/"
-            className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 hover:text-gray-900 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+            className="block py-2 pr-4 pl-3 border-b border-gray-800 hover:bg-gray-50 hover:text-gray-900 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
           >
             Pagrindinis
           </Link>
         </li>
         <li>
           <Link
-            className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 hover:text-gray-900"
+            className="block py-2 pr-4 pl-3 border-b border-gray-800 hover:bg-gray-50 hover:text-gray-900"
             to="/cart"
           >
             <FaShoppingCart className="inline-block text-xl" /> Krepšelis
@@ -99,7 +99,7 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
             </div>
           ) : (
             <Link
-              className="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 hover:text-gray-900"
+              className="block py-2 pr-4 pl-3 border-b border-gray-800 hover:bg-gray-50 hover:text-gray-900"
               to="/login"
             >
               <FaUser className="inline-block text-xl" /> Prisijungti

@@ -1,10 +1,11 @@
 import { ProductInterface } from "../../services/interfaces/productInterfaces";
 import { useCartHandlers } from "../../services/handlers/cartHandlers";
 import AppLayout from "../../layouts/main";
-import CartItem from "../../components/cart/cartItem";
-import EmptySection from "../../components/cart/emptySection";
-import SubTotal from "../../components/cart/subTotal";
-import FirstStep from "../../components/checkoutSteps/firstStep";
+import CartItem from "../../partials/cart/_cartItem";
+import EmptySection from "../../partials/cart/_emptySection";
+import SubTotal from "../../partials/cart/_subTotal";
+import FirstStep from "../../components/ui/checkoutSteps/firstStep";
+import Meta from "../../components/meta";
 
 const CartView = () => {
   const {
@@ -16,6 +17,7 @@ const CartView = () => {
 
   return (
     <AppLayout>
+      <Meta title="Pirkinių krepšelis" />
       <FirstStep />
       <div className="w-full py-10">
         <h2 className="mb-10 text-center text-3xl font-bold">

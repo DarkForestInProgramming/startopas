@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import AppLayout from "../../layouts/main";
-import LoginForm from "../../components/form/logForm";
+import LoginForm from "../../components/ui/form/logForm";
 import { useLoginHandlers } from "../../services/handlers/logHandlers";
+import Meta from "../../components/meta";
 
 const LoginView = () => {
   const {
@@ -24,6 +25,7 @@ const LoginView = () => {
 
   return (
     <AppLayout>
+      <Meta title="Prisijungimas" />
       <section className="md:py-16 py-4">
         <LoginForm
           submitHandler={submitHandler}

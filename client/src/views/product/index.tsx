@@ -1,13 +1,14 @@
 import AppLayout from "../../layouts/main";
-import Breadcrumb from "../../components/breadcrumb";
-import Loader from "../../components/loader";
-import ImgSection from "../../components/product/imgSection";
-import PriceSection from "../../components/product/priceSection";
-import QtySection from "../../components/product/qtySection";
-import RatingSection from "../../components/product/ratingSection";
-import DescSection from "../../components/product/descSection";
-import BtnSection from "../../components/product/btnSection";
+import Breadcrumb from "../../components/ui/breadcrumb";
+import Loader from "../../components/ui/loader";
+import ImgSection from "../../partials/product/_imgSection";
+import PriceSection from "../../partials/product/_priceSection";
+import QtySection from "../../partials/product/_qtySection";
+import RatingSection from "../../partials/product/_ratingSection";
+import DescSection from "../../partials/product/_descSection";
+import BtnSection from "../../partials/product/_btnSection";
 import { useProductHandlers } from "../../services/handlers/productHandlers";
+import Meta from "../../components/meta";
 
 const ProductView = () => {
   const { addToCartHandler, qty, setQty, product, isLoading } =
@@ -15,6 +16,7 @@ const ProductView = () => {
 
   return (
     <AppLayout>
+      <Meta title={product?.name} />
       {isLoading ? (
         <Loader />
       ) : (

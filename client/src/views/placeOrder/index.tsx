@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import AppLayout from "../../layouts/main";
 import { useEffect } from "react";
-import FourthStep from "../../components/checkoutSteps/fourthStep";
+import FourthStep from "../../components/ui/checkoutSteps/fourthStep";
 import { ProductInterface } from "../../services/interfaces/productInterfaces";
 import { usePlaceOrderHandlers } from "../../services/handlers/placeOrdHandlers";
-import PlaceCartItem from "../../components/cart/placeCartItem";
-import PlaceCartTotal from "../../components/cart/placeCartTotal";
+import PlaceCartItem from "../../partials/cart/_placeCartItem";
+import PlaceCartTotal from "../../partials/cart/_placeCartTotal";
+import Meta from "../../components/meta";
 
 const PlaceOrderView = () => {
   const { cart, navigate, placeOrderHandler, isLoading } =
@@ -21,6 +22,7 @@ const PlaceOrderView = () => {
 
   return (
     <AppLayout>
+      <Meta title="Užsakymo sukūrimas" />
       <FourthStep />
       <div className="w-full py-5 md:py-10 items-center justify-center">
         <div className="container mx-auto">

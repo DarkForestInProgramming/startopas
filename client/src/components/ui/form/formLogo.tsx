@@ -8,8 +8,9 @@ const FormLogo = () => {
     >
       <img
         className="w-8 h-8 mr-2"
-        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-        alt="logo"
+        src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1699870799/Startopas/startopas_logo.png"
+        alt="Startopas"
+        loading="lazy"
       />
       Startopas
     </Link>

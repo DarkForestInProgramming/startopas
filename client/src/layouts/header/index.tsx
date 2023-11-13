@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="bg-gray-900 text-white border-gray-200 px-4 lg:px-6 py-2.5 ">
+      <nav className="bg-gray-300 text-gray-800 border-gray-200 px-4 lg:px-6 py-3.5 shadow-md">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <NavLogo />
           <MobBtn

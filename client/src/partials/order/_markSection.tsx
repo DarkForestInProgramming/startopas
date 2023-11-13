@@ -1,5 +1,5 @@
 import { OrderInterface } from "../../services/interfaces/orderInterfaces";
-import Loader from "../loader";
+import Loader from "../../components/ui/loader";
 
 const MarkSection = (props: {
   loadingDeliver: boolean;

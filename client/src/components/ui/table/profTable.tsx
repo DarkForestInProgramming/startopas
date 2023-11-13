@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { OrderInterface } from "../../services/interfaces/orderInterfaces";
+import { OrderInterface } from "../../../services/interfaces/orderInterfaces";
 import Loader from "../loader";
 
 const ProfileTable = (props: {

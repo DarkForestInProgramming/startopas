@@ -1,12 +1,14 @@
 import AppLayout from "../../../layouts/main";
-import Loader from "../../../components/loader";
+import Loader from "../../../components/ui/loader";
 import { useGetOrdersQuery } from "../../../services/slices/ordersApiSlice";
-import AdminTable from "../../../components/table/adminTable";
+import AdminTable from "../../../components/ui/table/adminTable";
+import Meta from "../../../components/meta";
 
 const OrderListView = () => {
   const { data: orders, isLoading } = useGetOrdersQuery({});
   return (
     <AppLayout>
+      <Meta title="Užsakymai" />
       <div className="w-full py-5 md:py-10">
         <div className="container mx-auto p-4">
           <h2 className="text-2xl">Užsakymai</h2>

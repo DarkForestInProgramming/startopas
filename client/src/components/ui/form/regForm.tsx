@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { RegisterInterface } from "../../services/interfaces/authInterfaces";
+import { RegisterInterface } from "../../../services/interfaces/authInterfaces";
 import FormLogo from "./formLogo";
 import SmallLoader from "../loader/smallLoad";
 import Breadcrumb from "../breadcrumb";
@@ -10,9 +10,9 @@ const RegisterForm: React.FC<RegisterInterface> = (props) => {
       <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
         <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
           <img
-            src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1699871840/Startopas/auth_logo_two.png"
             className="w-full"
-            alt="Sample"
+            alt="Autentifikacijos logotipas"
             loading="lazy"
           />
         </div>

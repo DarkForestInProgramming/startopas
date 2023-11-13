@@ -1,4 +1,4 @@
-import { ProductInterface } from "../../services/interfaces/productInterfaces";
+import { ProductInterface } from "../../../services/interfaces/productInterfaces";
 
 const OrderTable = (props: { order: any }) => {
   return (

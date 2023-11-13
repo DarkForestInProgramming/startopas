@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import AppLayout from "../../layouts/main";
+import Meta from "../../components/meta";
 
 const NotFoundView = () => {
   return (
     <AppLayout>
+      <Meta title="404" />
       <div className="flex h-full items-center justify-center">
         <div className="bg-white p-20 rounded-lg shadow-lg text-center">
           <h2 className="text-2xl font-bold text-red-500">

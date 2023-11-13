@@ -1,4 +1,4 @@
-import Rating from "../rating";
+import Rating from "../../components/ui/rating";
 
 const RatingSection = (props: { rating: number; numReviews: number }) => {
   return (

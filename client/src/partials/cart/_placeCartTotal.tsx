@@ -1,5 +1,5 @@
 import { CartInterface } from "../../services/interfaces/orderInterfaces";
-import SmallLoader from "../loader/smallLoad";
+import SmallLoader from "../../components/ui/loader/smallLoad";
 
 const PlaceCartTotal = (props: {
   cart: CartInterface;

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import AppLayout from "../../layouts/main";
-import RegisterForm from "../../components/form/regForm";
+import RegisterForm from "../../components/ui/form/regForm";
 import { useRegisterHandlers } from "../../services/handlers/regHandlers";
+import Meta from "../../components/meta";
 
 const RegisterView = () => {
   const {
@@ -28,6 +29,7 @@ const RegisterView = () => {
 
   return (
     <AppLayout>
+      <Meta title="Registracija" />
       <section className="md:py-16 py-4">
         <RegisterForm
           submitHandler={submitHandler}
