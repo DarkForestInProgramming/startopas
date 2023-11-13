@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 app.use(helmet());
-app.use(notFound);
+// app.use(notFound);
 app.use(errorHandler);
 
 app.get("/", (req, res) => {
