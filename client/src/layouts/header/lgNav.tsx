@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { ProductInterface } from "../../services/interfaces/productInterfaces";
 import { HeaderInterface } from "../../services/interfaces/headerInterfaces";
 
-const LgNav: React.FC<HeaderInterface> = (props) => {
+const LgNav: React.FC<HeaderInterface> = ({
+  cartItems,
+  userInfo,
+  toggleDropdown,
+  isOpen,
+  logoutHandler,
+}) => {
   return (
     <div
       className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
@@ -21,10 +27,10 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
         <li>
           <Link to="/cart" className="hover:text-gray-400">
             <FaShoppingCart className="inline-block text-xl" /> Krepšelis
-            {props.cartItems.length > 0 && (
+            {cartItems.length > 0 && (
               <>
                 <span className="bg-red-600 text-white text-xs font-medium ml-1 px-1.5  rounded-full">
-                  {props.cartItems.reduce(
+                  {cartItems.reduce(
                     (acc: number, current: ProductInterface) =>
                       acc + current.qty,
                     0
@@ -35,14 +41,14 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
           </Link>
         </li>
         <li>
-          {props.userInfo ? (
+          {userInfo ? (
             <div className="relative">
               <div
-                onClick={props.toggleDropdown}
+                onClick={toggleDropdown}
                 className="inline-flex items-center cursor-pointer"
               >
                 <FaUser className="inline-block text-lg mr-1" />
-                {props.userInfo.name}
+                {userInfo.name}
                 <svg
                   className="w-2.5 h-2.5 ml-1.5"
                   aria-hidden="true"
@@ -59,7 +65,7 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
                 </svg>
               </div>
 
-              {props.isOpen && (
+              {isOpen && (
                 <div className="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                   <ul className="py-2 text-sm text-gray-700 ">
                     <li>
@@ -70,7 +76,7 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
                         Mano Paskyra
                       </Link>
                     </li>
-                    {props.userInfo && props.userInfo.isAdmin && (
+                    {userInfo && userInfo.isAdmin && (
                       <li>
                         <Link
                           to="/admin/orderList"
@@ -82,7 +88,7 @@ const LgNav: React.FC<HeaderInterface> = (props) => {
                     )}
                     <li>
                       <p
-                        onClick={props.logoutHandler}
+                        onClick={logoutHandler}
                         className="block px-4 py-2 hover:bg-gray-100 cursor-pointer "
                       >
                         Atsijungti

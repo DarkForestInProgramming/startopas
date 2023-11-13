@@ -1,14 +1,14 @@
 import { PayPalButtons } from "@paypal/react-paypal-js";
-import { OrderInterface } from "../../services/interfaces/orderInterfaces";
+import { OrderSummaryInterface } from "../../services/interfaces/orderInterfaces";
 import Loader from "../../components/ui/loader";
 
-const SummarySection = (props: {
-  order: OrderInterface;
-  loadingPay: boolean;
-  isPending: boolean;
-  createOrder: any;
-  onApprove: any;
-  onError: any;
+const SummarySection: React.FC<OrderSummaryInterface> = ({
+  order,
+  loadingPay,
+  isPending,
+  createOrder,
+  onApprove,
+  onError,
 }) => {
   return (
     <div className="mt-10">
@@ -16,34 +16,34 @@ const SummarySection = (props: {
       <div className="mt-4">
         <div className="flex justify-between">
           <p>Pirkinių suma:</p>
-          <p>{props.order.itemsPrice}€</p>
+          <p>{order.itemsPrice}€</p>
         </div>
         <div className="flex justify-between">
           <p>PVM (21%):</p>
-          <p>{props.order.taxPrice}€</p>
+          <p>{order.taxPrice}€</p>
         </div>
         <div className="flex justify-between">
           <p>Pristatymas:</p>
-          <p>{props.order.shippingPrice}€</p>
+          <p>{order.shippingPrice}€</p>
         </div>
         <div className="flex justify-between font-semibold text-xl mt-4">
           <p>Bendrai:</p>
-          <p>{props.order.totalPrice}€</p>
+          <p>{order.totalPrice}€</p>
         </div>
       </div>
-      {!props.order.isPaid && (
+      {!order.isPaid && (
         <>
-          {props.loadingPay && <Loader />}
-          {props.isPending ? (
+          {loadingPay && <Loader />}
+          {isPending ? (
             <div className="mt-4">
               <Loader />
             </div>
           ) : (
             <div className="mt-5 flex justify-end">
               <PayPalButtons
-                createOrder={props.createOrder}
-                onApprove={props.onApprove}
-                onError={props.onError}
+                createOrder={createOrder}
+                onApprove={onApprove}
+                onError={onError}
               ></PayPalButtons>
             </div>
           )}

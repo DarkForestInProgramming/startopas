@@ -1,15 +1,12 @@
 import { Helmet } from "react-helmet-async";
+import { MetaInterface } from "../services/interfaces/globalInterfaces";
 
-const Meta = (props: {
-  title: string;
-  description: string;
-  keywords: string;
-}) => {
+const Meta: React.FC<MetaInterface> = ({ title, description, keywords }) => {
   return (
     <Helmet>
-      <title>Startopas.lt - {props.title}</title>
-      <meta name="description" content={props.description} />
-      <meta name="keywords" content={props.keywords} />
+      <title>Startopas.lt - {title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
     </Helmet>
   );
 };

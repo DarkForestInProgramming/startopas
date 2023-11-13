@@ -1,3 +1,5 @@
+import { CartInterface } from "./orderInterfaces";
+
 export interface ProductInterface {
   _id: string;
   name: string;
@@ -24,4 +26,19 @@ export interface ProductCardInterface {
 export interface ProductRatingInterface {
   value: number;
   text: string;
+}
+
+export interface PlaceCartItemInterface {
+  item: ProductInterface;
+}
+
+export interface PlaceCartTotalInterface {
+  cart: CartInterface;
+  isLoading: boolean;
+  placeOrderHandler: () => Promise<void>;
+}
+
+export interface CartSubtotalInterface {
+  checkoutHandler: () => void;
+  cartItems: ProductInterface[];
 }

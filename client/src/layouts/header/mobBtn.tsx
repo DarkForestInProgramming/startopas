@@ -1,14 +1,16 @@
-const MobBtn = (props: {
-  toggleMobileMenu: () => void;
-  isMobileMenuOpen: boolean;
+import { MobHeaderInterface } from "../../services/interfaces/headerInterfaces";
+
+const MobBtn: React.FC<MobHeaderInterface> = ({
+  toggleMobileMenu,
+  isMobileMenuOpen,
 }) => {
   return (
     <button
-      onClick={props.toggleMobileMenu}
+      onClick={toggleMobileMenu}
       className="lg:hidden inline-flex items-center p-2 ml-1 text-sm rounded-lg hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
     >
       <svg
-        className={`w-6 h-6 ${props.isMobileMenuOpen ? "hidden" : ""}`}
+        className={`w-6 h-6 ${isMobileMenuOpen ? "hidden" : ""}`}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +22,7 @@ const MobBtn = (props: {
         ></path>
       </svg>
       <svg
-        className={`w-6 h-6 ${props.isMobileMenuOpen ? "" : "hidden"}`}
+        className={`w-6 h-6 ${isMobileMenuOpen ? "" : "hidden"}`}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import { OrderInterface } from "../../../services/interfaces/orderInterfaces";
+import {
+  OrderInterface,
+  ProfileInterface,
+} from "../../../services/interfaces/orderInterfaces";
 import Loader from "../loader";
 
-const ProfileTable = (props: {
-  isLoading: boolean;
-  orders: OrderInterface[];
-}) => {
+const ProfileTable: React.FC<ProfileInterface> = ({ isLoading, orders }) => {
   return (
     <div className="md:w-1/2 md:mt-5 md:ml-40 lg:ml-48 items-center justify-center text-center ">
       <h2 className="text-xl mb-8 font-semibold">Mano Užsakymai</h2>
-      {props.isLoading ? (
+      {isLoading ? (
         <Loader />
       ) : (
         <div className="overflow-x-auto">
@@ -25,7 +25,7 @@ const ProfileTable = (props: {
               </tr>
             </thead>
             <tbody>
-              {props.orders.map((order: OrderInterface) => (
+              {orders.map((order: OrderInterface) => (
                 <tr key={order._id}>
                   <td className="w-1/4 md:w-1/6 py-4">{order._id.slice(-4)}</td>
                   <td className="w-1/4 md:w-1/6">

@@ -3,11 +3,18 @@ import { ProductInterface } from "../../services/interfaces/productInterfaces";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { HeaderInterface } from "../../services/interfaces/headerInterfaces";
 
-const MobNav: React.FC<HeaderInterface> = (props) => {
+const MobNav: React.FC<HeaderInterface> = ({
+  isMobileMenuOpen,
+  cartItems,
+  userInfo,
+  toggleDropdown,
+  isOpen,
+  logoutHandler,
+}) => {
   return (
     <div
       className={`mt-4 mb-4 lg:hidden w-full ${
-        props.isMobileMenuOpen ? "" : "hidden"
+        isMobileMenuOpen ? "" : "hidden"
       }`}
       id="mobile-menu-2"
     >
@@ -26,10 +33,10 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
             to="/cart"
           >
             <FaShoppingCart className="inline-block text-xl" /> Krepšelis
-            {props.cartItems.length > 0 && (
+            {cartItems.length > 0 && (
               <>
                 <span className="bg-red-600 text-white text-xs font-medium ml-1 px-1.5  rounded-full">
-                  {props.cartItems.reduce(
+                  {cartItems.reduce(
                     (acc: number, current: ProductInterface) =>
                       acc + current.qty,
                     0
@@ -40,14 +47,14 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
           </Link>
         </li>
         <li>
-          {props.userInfo ? (
+          {userInfo ? (
             <div className="relative block py-2 pr-4 pl-3">
               <div
-                onClick={props.toggleDropdown}
+                onClick={toggleDropdown}
                 className="inline-flex items-center cursor-pointer"
               >
                 <FaUser className="inline-block text-xl" />
-                &nbsp;{props.userInfo.name}
+                &nbsp;{userInfo.name}
                 <svg
                   className="w-2.5 h-2.5 ml-1.5"
                   aria-hidden="true"
@@ -64,7 +71,7 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
                 </svg>
               </div>
 
-              {props.isOpen && (
+              {isOpen && (
                 <div className="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                   <ul className="py-2 text-sm text-gray-700">
                     <li>
@@ -75,7 +82,7 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
                         Mano Paskyra
                       </Link>
                     </li>
-                    {props.userInfo && props.userInfo.isAdmin && (
+                    {userInfo && userInfo.isAdmin && (
                       <li>
                         <Link
                           to="/admin/orderList"
@@ -87,7 +94,7 @@ const MobNav: React.FC<HeaderInterface> = (props) => {
                     )}
                     <li>
                       <p
-                        onClick={props.logoutHandler}
+                        onClick={logoutHandler}
                         className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
                       >
                         Atsijungti

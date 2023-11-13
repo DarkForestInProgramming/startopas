@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import helmet from "helmet";
 import cookieParser from "cookie-parser";
 dotenv.config();
 import connectDB from "./config/db.js";
@@ -12,12 +13,15 @@ const port = process.env.PORT;
 connectDB();
 const app = express();
 
-// Body parser middleware
+//  @desc Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Cookie parser middleware
+//  @desc Cookie parser middleware
 app.use(cookieParser());
+
+//  @desc Enabling the Helmet middleware
+app.use(helmet());
 
 app.get("/", (req, res) => {
   res.send("API is running.");

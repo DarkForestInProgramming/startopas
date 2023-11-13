@@ -1,10 +1,10 @@
-import { CartInterface } from "../../services/interfaces/orderInterfaces";
 import SmallLoader from "../../components/ui/loader/smallLoad";
+import { PlaceCartTotalInterface } from "../../services/interfaces/productInterfaces";
 
-const PlaceCartTotal = (props: {
-  cart: CartInterface;
-  isLoading: boolean;
-  placeOrderHandler: () => Promise<void>;
+const PlaceCartTotal: React.FC<PlaceCartTotalInterface> = ({
+  cart,
+  isLoading,
+  placeOrderHandler,
 }) => {
   return (
     <div id="summary" className="w-full lg:w-1/4 px-4 py-4 mt-6 lg:mt-0">
@@ -12,25 +12,25 @@ const PlaceCartTotal = (props: {
       <div className="mt-4">
         <div className="flex font-semibold justify-between py-4 text-xs uppercase">
           <span>PVM (21%):</span>
-          <span>€{props.cart.taxPrice}</span>
+          <span>€{cart.taxPrice}</span>
         </div>
         <div className="flex font-semibold justify-between text-xs uppercase">
           <span>Pristatymas:</span>
-          <span>€{props.cart.shippingPrice}</span>
+          <span>€{cart.shippingPrice}</span>
         </div>
         <div className="flex font-semibold justify-between py-4 text-sm uppercase">
           <span>Bendra Suma:</span>
-          <span>€{props.cart.totalPrice}</span>
+          <span>€{cart.totalPrice}</span>
         </div>
         <button
           className="py-3 w-full bg-gray-900 text-white hover:bg-gray-800 font-medium rounded text-sm text-center shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-          disabled={props.cart.cartItems?.length === 0}
-          onClick={props.placeOrderHandler}
+          disabled={cart.cartItems?.length === 0}
+          onClick={placeOrderHandler}
         >
           Pirkti
         </button>
       </div>
-      {props.isLoading && (
+      {isLoading && (
         <div className="mx-auto mt-4">
           <SmallLoader />
         </div>

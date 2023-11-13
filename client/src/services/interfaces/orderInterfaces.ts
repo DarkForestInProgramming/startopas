@@ -32,3 +32,24 @@ export interface CartInterface {
   addToCartHandler: (product: any, qty: number) => void;
   removeFromCartHandler: (id: string) => void;
 }
+
+export interface ProfileInterface {
+  isLoading: boolean;
+  orders: OrderInterface[];
+}
+
+export interface OrderMarkInterface {
+  loadingDeliver: boolean;
+  userInfo: any;
+  order: OrderInterface;
+  deliverOrderHandler: () => Promise<void>;
+}
+
+export interface OrderSummaryInterface {
+  order: OrderInterface;
+  loadingPay: boolean;
+  isPending: boolean;
+  createOrder: any;
+  onApprove: any;
+  onError: any;
+}

@@ -1,11 +1,21 @@
 import { ShippingInterface } from "../../../services/interfaces/paymentInterfaces";
 
-const ShippingForm: React.FC<ShippingInterface> = (props) => {
+const ShippingForm: React.FC<ShippingInterface> = ({
+  submitHandler,
+  address,
+  setAddress,
+  city,
+  setCity,
+  postalCode,
+  setPostalCode,
+  country,
+  setCountry,
+}) => {
   return (
     <div className="mt-5 md:mt-10">
       <div className="bg-white p-6 md:p-24 shadow-md rounded-lg ">
         <h1 className="text-2xl font-semibold mb-4">Pristatymo Informacija</h1>
-        <form onSubmit={props.submitHandler}>
+        <form onSubmit={submitHandler}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium">Adresas</label>
@@ -13,8 +23,8 @@ const ShippingForm: React.FC<ShippingInterface> = (props) => {
                 type="text"
                 className="border border-gray-300 rounded-lg p-2 w-full"
                 placeholder="Įveskite adresą"
-                value={props.address}
-                onChange={(e) => props.setAddress(e.target.value)}
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
               />
             </div>
             <div>
@@ -23,8 +33,8 @@ const ShippingForm: React.FC<ShippingInterface> = (props) => {
                 type="text"
                 className="border border-gray-300 rounded-lg p-2 w-full"
                 placeholder="Įveskite miestą"
-                value={props.city}
-                onChange={(e) => props.setCity(e.target.value)}
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
               />
             </div>
             <div>
@@ -33,8 +43,8 @@ const ShippingForm: React.FC<ShippingInterface> = (props) => {
                 type="text"
                 className="border border-gray-300 rounded-lg p-2 w-full"
                 placeholder="Įveskite pašto kodą"
-                value={props.postalCode}
-                onChange={(e) => props.setPostalCode(e.target.value)}
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
               />
             </div>
             <div>
@@ -43,8 +53,8 @@ const ShippingForm: React.FC<ShippingInterface> = (props) => {
                 type="text"
                 className="border border-gray-300 rounded-lg p-2 w-full"
                 placeholder="Įveskite šalį"
-                value={props.country}
-                onChange={(e) => props.setCountry(e.target.value)}
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
               />
             </div>
           </div>

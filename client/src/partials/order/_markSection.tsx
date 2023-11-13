@@ -1,26 +1,20 @@
-import { OrderInterface } from "../../services/interfaces/orderInterfaces";
+import { OrderMarkInterface } from "../../services/interfaces/orderInterfaces";
 import Loader from "../../components/ui/loader";
 
-const MarkSection = (props: {
-  loadingDeliver: boolean;
-  userInfo: any;
-  order: OrderInterface;
-  deliverOrderHandler: () => Promise<void>;
+const MarkSection: React.FC<OrderMarkInterface> = ({
+  loadingDeliver,
+  userInfo,
+  order,
+  deliverOrderHandler,
 }) => {
   return (
     <div className="justify-end items-end text-end">
-      {props.loadingDeliver && <Loader />}
-      {props.userInfo &&
-        props.userInfo.isAdmin &&
-        props.order.isPaid &&
-        !props.order.isDelivered && (
-          <button
-            className="mt-6 py-1.5 px-2"
-            onClick={props.deliverOrderHandler}
-          >
-            Žymėti Kaip Pristatytą
-          </button>
-        )}
+      {loadingDeliver && <Loader />}
+      {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+        <button className="mt-6 py-1.5 px-2" onClick={deliverOrderHandler}>
+          Žymėti Kaip Pristatytą
+        </button>
+      )}
     </div>
   );
 };

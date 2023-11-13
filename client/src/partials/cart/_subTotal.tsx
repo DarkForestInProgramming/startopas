@@ -1,8 +1,11 @@
-import { ProductInterface } from "../../services/interfaces/productInterfaces";
+import {
+  CartSubtotalInterface,
+  ProductInterface,
+} from "../../services/interfaces/productInterfaces";
 
-const SubTotal = (props: {
-  checkoutHandler: any;
-  cartItems: ProductInterface[];
+const SubTotal: React.FC<CartSubtotalInterface> = ({
+  checkoutHandler,
+  cartItems,
 }) => {
   return (
     <div className="mt-6 h-full rounded-lg border  p-6 shadow-md md:mt-0 md:w-1/3">
@@ -10,7 +13,7 @@ const SubTotal = (props: {
         <p>Pirkinių kiekis:</p>
         <p>
           (
-          {props.cartItems.reduce(
+          {cartItems.reduce(
             (acc: number, item: ProductInterface) => acc + item.qty,
             0
           )}
@@ -23,7 +26,7 @@ const SubTotal = (props: {
         <div className="">
           <p className="mb-1 text-lg font-bold">
             €
-            {props.cartItems
+            {cartItems
               .reduce(
                 (acc: number, item: ProductInterface) =>
                   acc + item.qty * item.price,
@@ -35,8 +38,8 @@ const SubTotal = (props: {
       </div>
       <button
         className="py-2 px-4 mt-4 w-full"
-        disabled={props.cartItems.length === 0}
-        onClick={props.checkoutHandler}
+        disabled={cartItems.length === 0}
+        onClick={checkoutHandler}
       >
         Apmokėti
       </button>

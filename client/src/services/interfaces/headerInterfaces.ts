@@ -9,3 +9,8 @@ export interface HeaderInterface {
   isOpen: boolean;
   logoutHandler: () => void;
 }
+
+export interface MobHeaderInterface {
+  toggleMobileMenu: () => void;
+  isMobileMenuOpen: boolean;
+}

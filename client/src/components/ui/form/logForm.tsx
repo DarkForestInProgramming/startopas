@@ -4,7 +4,15 @@ import FormLogo from "./formLogo";
 import SmallLoader from "../loader/smallLoad";
 import Breadcrumb from "../breadcrumb";
 
-const LoginForm: React.FC<LoginInterface> = (props) => {
+const LoginForm: React.FC<LoginInterface> = ({
+  submitHandler,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  isLoading,
+  redirect,
+}) => {
   return (
     <div className="h-full">
       <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
@@ -17,7 +25,7 @@ const LoginForm: React.FC<LoginInterface> = (props) => {
           />
         </div>
         <div className="mb-12 md:mb-0 w-8/12 md:w-8/12 lg:w-5/12 xl:w-5/12">
-          <form onSubmit={props.submitHandler}>
+          <form onSubmit={submitHandler}>
             <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
               <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
                 Prisijungimas
@@ -35,8 +43,8 @@ const LoginForm: React.FC<LoginInterface> = (props) => {
                 id="email"
                 type="email"
                 placeholder="pavyzdys@gmail.com"
-                value={props.email}
-                onChange={(e) => props.setEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="mb-6">
@@ -49,23 +57,19 @@ const LoginForm: React.FC<LoginInterface> = (props) => {
                 name="password"
                 id="password"
                 placeholder="••••••••"
-                value={props.password}
-                onChange={(e) => props.setPassword(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="text-center lg:text-left">
-              <button className="px-7 pb-2.5 pt-3" disabled={props.isLoading}>
+              <button className="px-7 pb-2.5 pt-3" disabled={isLoading}>
                 Prisijungti
               </button>
-              {props.isLoading && <SmallLoader />}
+              {isLoading && <SmallLoader />}
               <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
                 Esate naujas pirkėjas?{" "}
                 <Link
-                  to={
-                    props.redirect
-                      ? `/register?redirect=${props.redirect}`
-                      : "/register"
-                  }
+                  to={redirect ? `/register?redirect=${redirect}` : "/register"}
                   className="text-danger font-medium text-gray-600 hover:underline transition duration-150 ease-in-out"
                 >
                   Registruotis

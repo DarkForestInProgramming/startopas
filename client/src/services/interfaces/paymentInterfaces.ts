@@ -1,3 +1,8 @@
+export interface PaymentInterface {
+  submitHandler: (e: React.FormEvent) => void;
+  setPaymentMethod: Function;
+}
+
 export interface ShippingInterface {
   submitHandler: (e: React.FormEvent) => void;
   address: string;

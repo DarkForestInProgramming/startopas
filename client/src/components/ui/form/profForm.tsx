@@ -1,10 +1,21 @@
 import { UpdateInterface } from "../../../services/interfaces/authInterfaces";
 import SmallLoader from "../loader/smallLoad";
 
-const ProfileForm: React.FC<UpdateInterface> = (props) => {
+const ProfileForm: React.FC<UpdateInterface> = ({
+  submitHandler,
+  name,
+  setName,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  confirmPassword,
+  setConfirmPassword,
+  loadingUpdateProfile,
+}) => {
   return (
     <form
-      onSubmit={props.submitHandler}
+      onSubmit={submitHandler}
       className="shadow-md rounded px-4 pt-6 pb-8 mb-6 md:w-1/4 md:mr-6"
     >
       <h2 className="mb-6 text-xl font-semibold">Vartotojo profilis</h2>
@@ -17,8 +28,8 @@ const ProfileForm: React.FC<UpdateInterface> = (props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="Enter name"
-          value={props.name}
-          onChange={(e) => props.setName(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="mb-4">
@@ -30,8 +41,8 @@ const ProfileForm: React.FC<UpdateInterface> = (props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           type="email"
           placeholder="Įveskite el. paštą"
-          value={props.email}
-          onChange={(e) => props.setEmail(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="mb-4">
@@ -43,8 +54,8 @@ const ProfileForm: React.FC<UpdateInterface> = (props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           type="password"
           placeholder="Įveskite naują slaptažodį"
-          value={props.password}
-          onChange={(e) => props.setPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className="mb-4">
@@ -59,8 +70,8 @@ const ProfileForm: React.FC<UpdateInterface> = (props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           type="password"
           placeholder="Patvirtinkite naują slaptažodį"
-          value={props.confirmPassword}
-          onChange={(e) => props.setConfirmPassword(e.target.value)}
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
         />
       </div>
       <button
@@ -69,7 +80,7 @@ const ProfileForm: React.FC<UpdateInterface> = (props) => {
       >
         Atnaujinti
       </button>
-      {props.loadingUpdateProfile && <SmallLoader />}
+      {loadingUpdateProfile && <SmallLoader />}
     </form>
   );
 };
