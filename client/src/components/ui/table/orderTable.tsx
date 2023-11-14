@@ -16,7 +16,12 @@ const OrderTable = (props: { order: any }) => {
           {props.order.orderItems.map((item: ProductInterface, idx: number) => (
             <tr key={idx}>
               <td className="border border-gray-300 p-2">
-                <img src={item.image} className="w-34 h-24" alt={item.name} />
+                <img
+                  className="w-34 h-24"
+                  src={item.image}
+                  loading="lazy"
+                  alt={item.name}
+                />
               </td>
               <td className="border border-gray-300 p-2">{item.name}</td>
               <td className="border border-gray-300 p-2">

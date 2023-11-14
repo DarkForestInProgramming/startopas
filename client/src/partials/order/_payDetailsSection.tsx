@@ -4,7 +4,7 @@ import { OrderInterface } from "../../services/interfaces/orderInterfaces";
 const PayDetailsSection = (props: { order: OrderInterface }) => {
   return (
     <div className="mt-4">
-      <h2 className="text-xl font-semibold">Apmokėjimo Būdas:</h2>
+      <h2 className="text-xl font-medium">Apmokėjimo Būdas:</h2>
       <p className="mt-4 flex">
         <span className="font-bold">Būdas:&nbsp;</span>{" "}
         {props.order.paymentMethod}

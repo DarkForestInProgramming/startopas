@@ -12,17 +12,17 @@ const SummarySection: React.FC<OrderSummaryInterface> = ({
 }) => {
   return (
     <div className="mt-10">
-      <h2 className="text-xl font-semibold">Iš Viso:</h2>
+      <h2 className="text-xl font-semibold">Iš viso:</h2>
       <div className="mt-4">
-        <div className="flex justify-between">
+        <div className="flex justify-between ftext-sm">
           <p>Pirkinių suma:</p>
           <p>{order.itemsPrice}€</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between text-sm">
           <p>PVM (21%):</p>
           <p>{order.taxPrice}€</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between text-sm">
           <p>Pristatymas:</p>
           <p>{order.shippingPrice}€</p>
         </div>

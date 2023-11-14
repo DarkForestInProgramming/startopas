@@ -18,7 +18,7 @@ const MobNav: React.FC<HeaderInterface> = ({
       }`}
       id="mobile-menu-2"
     >
-      <ul className="flex flex-col font-mono lg:flex-row lg:space-x-8 lg:mt-0">
+      <ul className="flex flex-col font-thin lg:flex-row lg:space-x-8 lg:mt-0">
         <li>
           <Link
             to="/"

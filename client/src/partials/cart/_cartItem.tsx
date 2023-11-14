@@ -1,4 +1,4 @@
-import { FaTrash } from "react-icons/fa";
+import { MdRemoveShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { CartInterface } from "../../services/interfaces/orderInterfaces";
 
@@ -12,8 +12,8 @@ const CartItem: React.FC<CartInterface> = (props) => {
         <img
           className="w-full rounded-lg sm:w-40 h-full"
           src={props.image}
-          alt={props.name}
           loading="lazy"
+          alt={props.name}
         />
       </Link>
       <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
@@ -45,7 +45,7 @@ const CartItem: React.FC<CartInterface> = (props) => {
               className="py-1 px-1 hover:text-red-600"
               onClick={() => props.removeFromCartHandler(props._id)}
             >
-              <FaTrash />
+              <MdRemoveShoppingCart />
             </button>
           </div>
         </div>

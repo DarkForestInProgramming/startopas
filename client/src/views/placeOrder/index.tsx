@@ -30,8 +30,8 @@ const PlaceOrderView = () => {
             <div className="flex flex-col lg:flex-row justify-between shadow-md  rounded-md px-4 py-4">
               <div className="w-full lg:w-3/5 px-4 py-4">
                 <div className="flex justify-between border-b pb-4">
-                  <h1 className="font-semibold text-2xl">Pirkinių krepšelis</h1>
-                  <h2 className="font-semibold text-2xl">
+                  <h1 className="font-medium text-2xl">Pirkinių krepšelis</h1>
+                  <h2 className="font-medium text-2xl">
                     {cart.cartItems.length}{" "}
                     {cart.cartItems.length === 1 ? "Pirkinys" : "Pirkiniai"}
                   </h2>
@@ -47,8 +47,8 @@ const PlaceOrderView = () => {
                     )}
                   </>
                 )}
-                <Link to="/" className="flex font-semibold  text-sm mt-4">
-                  <svg className="fill-current mr-2  w-4" viewBox="0 0 448 512">
+                <Link to="/" className="flex font-medium text-sm mt-4">
+                  <svg className="fill-current mr-2 w-4" viewBox="0 0 448 512">
                     <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
                   </svg>
                   Tęsti apsipirkimą

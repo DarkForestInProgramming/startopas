@@ -8,9 +8,9 @@ const FormLogo = () => {
     >
       <img
         className="w-8 h-8 mr-2"
-        src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1699870799/Startopas/startopas_logo.png"
-        alt="Startopas"
+        src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1699953086/Startopas/app_logo.webp"
         loading="lazy"
+        alt="Logotipas"
       />
       Startopas
     </Link>

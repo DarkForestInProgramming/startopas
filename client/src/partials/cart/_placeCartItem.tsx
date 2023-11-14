@@ -10,15 +10,16 @@ const PlaceCartItem: React.FC<PlaceCartItemInterface> = ({ item }) => {
             <img
               className="w-full h-20 sm:w-full sm:h-24"
               src={item.image}
+              loading="lazy"
               alt={item.name}
             />
           </Link>
         </div>
         <div className="w-3/4 md:w-4/5 lg:w-4/5 pl-4">
-          <span className="font-bold text-sm">{item.name}</span>
+          <span className="font-medium text-sm">{item.name}</span>
         </div>
       </div>
-      <div className="w-1/5 text-center">
+      <div className="w-1/5 text-center font-thin">
         {item.qty} x {item.price}€ = {item.qty * item.price}€
       </div>
     </div>

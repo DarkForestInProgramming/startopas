@@ -5,8 +5,8 @@ const ImgSection = (props: { image: string; name: string }) => {
         <img
           className="w-full h-full hover:scale-105 transition duration-500 cursor-pointer object-contain"
           src={props.image}
-          alt={props.name}
           loading="lazy"
+          alt={props.name}
         />
       </div>
     </div>

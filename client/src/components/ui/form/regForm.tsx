@@ -22,10 +22,10 @@ const RegisterForm: React.FC<RegisterInterface> = ({
       <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
         <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
           <img
-            src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1699871840/Startopas/auth_logo_two.png"
             className="w-full"
-            alt="Autentifikacijos logotipas"
+            src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1699953731/Startopas/auth_logo.webp"
             loading="lazy"
+            alt="Startopas viršelis"
           />
         </div>
         <div className="mb-12 md:mb-0 w-8/12 md:w-8/12 lg:w-5/12 xl:w-5/12">

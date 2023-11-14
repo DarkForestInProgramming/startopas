@@ -8,7 +8,7 @@ const PlaceCartTotal: React.FC<PlaceCartTotalInterface> = ({
 }) => {
   return (
     <div id="summary" className="w-full lg:w-1/4 px-4 py-4 mt-6 lg:mt-0">
-      <h1 className="font-semibold text-2xl border-b pb-4">Iš Viso</h1>
+      <h1 className="font-semibold text-2xl border-b pb-4">Iš viso:</h1>
       <div className="mt-4">
         <div className="flex font-semibold justify-between py-4 text-xs uppercase">
           <span>PVM (21%):</span>

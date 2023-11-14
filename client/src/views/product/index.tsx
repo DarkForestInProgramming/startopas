@@ -25,7 +25,7 @@ const ProductView = () => {
             <div className="flex flex-col md:flex-row -mx-4">
               <ImgSection image={product.image} name={product.name} />
               <div className="md:flex-1 px-4 divide-y">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="text-2xl font-medium text-gray-800 mb-2">
                   {product.name}
                 </h2>
                 <Breadcrumb name={product.name} category={product.category} />

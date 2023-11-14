@@ -6,10 +6,10 @@ const QtySection = (props: {
   return (
     <div className="flex py-4">
       <div className="mr-4">
-        <span className="text-md font-bold text-gray-600">Kiekis:</span>
+        <span className="text-md font-medium text-gray-600">Kiekis:</span>
         <span>
           <select
-            className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block py-3 px-4 mt-2"
+            className="border border-gray-300 text-gray-900 font-thin text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block py-3 px-4 mt-2"
             name="qty"
             value={props.qty}
             onChange={(e) => props.setQty(Number(e.target.value))}

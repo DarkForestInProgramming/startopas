@@ -50,7 +50,7 @@ const Rating: FC<ProductRatingInterface> = ({ value, text }) => {
           <FaRegStar />
         )}
       </span>
-      <span className="rating-text ">{text && text}</span>
+      <span className="rating-text">{text && text}</span>
     </div>
   );
 };
