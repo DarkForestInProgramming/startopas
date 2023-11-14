@@ -20,9 +20,9 @@ const CartView = () => {
       <Meta title="Pirkinių krepšelis" />
       <FirstStep />
       <div className="w-full py-10">
-        <h2 className="mb-10 text-center text-3xl font-bold">
+        <h1 className="mb-10 text-center text-3xl font-medium">
           Pirkinių Krepšelis
-        </h2>
+        </h1>
         {cartItems.length === 0 ? (
           <EmptySection />
         ) : (

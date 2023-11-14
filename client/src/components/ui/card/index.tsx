@@ -22,7 +22,7 @@ const Card: React.FC<ProductCardInterface> = ({
         />
       </Link>
       <Link to={`/product/${_id}`}>
-        <h3 className="text-xl font-medium mt-2">{name}</h3>
+        <p className="text-2xl font-medium mt-2">{name}</p>
       </Link>
       <div className="flex items-center mt-2">
         <div>
